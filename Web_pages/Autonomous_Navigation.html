@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Autonomous Navigation - Chetan Parihar</title>
+  <meta content="Autonomous navigation projects using ROS 2, Nav2, SLAM, and LiDAR technologies." name="description">
+  <meta content="ROS2, Nav2, SLAM, LiDAR, Robotics, Autonomous Navigation" name="keywords">
+
+  <link href="../Images_and_Videos/main/C Symbol.png" rel="icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="../Extra_files/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="../Extra_files/css/style.css" rel="stylesheet">
+
+  <style>
+    .project-card {
+      background: #fff;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+      padding: 25px;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .badge-tech {
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-right: 6px;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+    .sticky-sidebar {
+      position: sticky;
+      top: 100px;
+      z-index: 10;
+    }
+    video {
+      border-radius: 8px;
+      background-color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="myaudio" src="../Audio/BG Music2.mp3" autoplay loop hidden></audio>
+
+  <script>
+    var audio = document.getElementById("myaudio");
+    if(audio) audio.volume = 0.5;
+  </script>
+
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="../Images_and_Videos/main/ProfileP(1).jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Chetan Parihar</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/chetan-parihar" class="facebook"><i class="bx bxl-github"></i></a>
+          <a href="https://www.instagram.com/ichetanparihar/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="../index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i><span>Information</span></a></li>
+          <li><a href="../index.html#services" class="nav-link scrollto"><i class="bx bx-server"></i><span>Projects</span></a></li>
+          <li><a href="../index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i><span>Certificates</span></a></li>
+          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i><span>Contact</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header><main id="main">
+
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Project Details</h2>
+          <ol>
+            <li><a href="../index.html#services">Projects</a></li>
+            <li>Autonomous Navigation</li>
+          </ol>
+        </div>
+      </div>
+    </section><section id="portfolio-details" class="portfolio-details section-bg">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="sticky-sidebar">
+              <div class="portfolio-details-slider swiper mb-4">
+                <div class="swiper-wrapper align-items-center">
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/MuksRobotics/auto_nav_image1.jpg" alt="" class="border"></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/MuksRobotics/auto_nav_image2.jpg" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/MuksRobotics/auto_nav_image3.jpg" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/MuksRobotics/auto_nav_image4.jpg" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/MuksRobotics/auto_nav_image5.jpg" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+
+              <div class="project-card">
+                <h3>Overview</h3>
+                <p>
+                  A collection of autonomous navigation projects demonstrating proficiency in SLAM, path planning, and sensor fusion across various robotic platforms including quadruped and wheeled robots.
+                </p>
+                <ul>
+                  <li><strong>Stack:</strong> ROS 2, Nav2</li>
+                  <li><strong>Sensors:</strong> 2D LiDAR, 3D LiDAR, Depth Cams</li>
+                  <li><strong>Algorithms:</strong> RTAB-MAP, SLAM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <h3 class="mb-4 pb-2 border-bottom">Demo Videos</h3>
+
+            <div class="project-card">
+              <h5>Unitree Go1 Navigation</h5>
+              <div class="mb-3">
+                <span class="badge bg-primary badge-tech">Nav2</span>
+                <span class="badge bg-secondary badge-tech">2D LiDAR</span>
+                <span class="badge bg-secondary badge-tech">Unitree Go1</span>
+              </div>
+              <p>Autonomous navigation using 2D LiDAR and Nav2 stack on a Unitree Go1 Quadruped.</p>
+              <video class="w-100" height="auto" muted autoplay loop controls>
+                <source src="../Images_and_Videos/MuksRobotics/gardio_30_jan_2025.webm" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="project-card">
+              <h5>SpacePro Navigation (Dubai Event)</h5>
+              <div class="mb-3">
+                <span class="badge bg-primary badge-tech">Nav2</span>
+                <span class="badge bg-secondary badge-tech">SpacePro</span>
+              </div>
+              <p>Autonomous navigation implementation using 2D LiDAR.</p>
+              <video class="w-100" height="auto" muted autoplay loop controls>
+                <source src="../Images_and_Videos/MuksRobotics/spaceopro_dubai_event_try.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="project-card">
+              <h5>SLAM Map Generation (Ignition Gazebo)</h5>
+              <div class="mb-3">
+                <span class="badge bg-primary badge-tech">RTAB-MAP</span>
+                <span class="badge bg-secondary badge-tech">3D LiDAR</span>
+                <span class="badge bg-secondary badge-tech">Simulation</span>
+              </div>
+              <p>RTAB-MAP map generation using 3D LiDAR data within the Ignition Gazebo environment.</p>
+              <video class="w-100" height="auto" muted autoplay loop controls>
+                <source src="../Images_and_Videos/MuksRobotics/spaceopro_rtab.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="project-card">
+              <h5>Unitree Go2 Navigation with RTAB-MAP</h5>
+              <div class="mb-3">
+                <span class="badge bg-primary badge-tech">Unitree Go2</span>
+                <span class="badge bg-secondary badge-tech">RTAB-MAP</span>
+              </div>
+              <video class="w-100" height="auto" muted autoplay loop controls>
+                <source src="../Images_and_Videos/MuksRobotics/go2.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="project-card">
+              <h5>SpaceOm Gen3 Multi-Sensor Navigation</h5>
+              <div class="mb-3">
+                <span class="badge bg-primary badge-tech">Sensor Fusion</span>
+                <span class="badge bg-secondary badge-tech">2D LiDAR</span>
+                <span class="badge bg-secondary badge-tech">Depth Camera</span>
+              </div>
+              <p>Navigation utilizing fusion of 2D LiDAR and Depth Camera data.</p>
+              
+              <div class="mb-3">
+                <video class="w-100" height="auto" muted autoplay loop controls>
+                  <source src="../Images_and_Videos/MuksRobotics/spaceom1ge3_nav2.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <p class="text-center small text-muted">Test Run 1</p>
+                  <video class="w-100" height="auto" muted autoplay loop controls>
+                    <source src="../Images_and_Videos/MuksRobotics/spaceogen3_nav_blur.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="col-md-6">
+                  <p class="text-center small text-muted">Test Run 2</p>
+                  <video class="w-100" height="auto" muted autoplay loop controls>
+                    <source src="../Images_and_Videos/MuksRobotics/spaceom1_gen3_blur.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section></main><a href="../Web_pages/ROS_2_Debugging_&_Monitoring_Application.html#portfolio" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-right-short"></i>
+  </a>
+
+  <script src="../Extra_files/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../Extra_files/vendor/aos/aos.js"></script>
+  <script src="../Extra_files/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../Extra_files/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../Extra_files/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../Extra_files/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../Extra_files/vendor/typed.js/typed.umd.js"></script>
+  <script src="../Extra_files/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../Extra_files/vendor/php-email-form/validate.js"></script>
+
+  <script src="../Extra_files/js/main.js"></script>
+
+</body>
+</html>

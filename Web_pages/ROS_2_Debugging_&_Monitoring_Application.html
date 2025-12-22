@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ROS 2 Debugging App - Chetan Parihar</title>
+  <meta content="A GUI-based ROS 2 debugging and monitoring application for robotics." name="description">
+  <meta content="ROS2, Python, Qt, Debugging, Robotics, rclpy" name="keywords">
+
+  <link href="../Images_and_Videos/main/C Symbol.png" rel="icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="../Extra_files/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="../Extra_files/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Card Styling */
+    .project-card {
+      background: #fff;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+      padding: 25px;
+      transition: transform 0.3s ease;
+    }
+    
+    /* Feature Images */
+    .feature-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      border: 1px solid #eee;
+      margin-top: 15px;
+    }
+
+    /* Tech Badges */
+    .badge-tech {
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-right: 5px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background-color: #e9ecef;
+      color: #495057;
+    }
+
+    /* Sticky Sidebar */
+    .sticky-sidebar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 100px;
+      z-index: 10;
+    }
+
+    /* Icons */
+    .feature-icon {
+      font-size: 1.5rem;
+      color: #173b6c;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="myaudio" src="../Audio/BG Music2.mp3" autoplay loop hidden></audio>
+
+  <script>
+    var audio = document.getElementById("myaudio");
+    if(audio) audio.volume = 0.5;
+  </script>
+
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="../Images_and_Videos/main/ProfileP(1).jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Chetan Parihar</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/chetan-parihar" class="facebook"><i class="bx bxl-github"></i></a>
+          <a href="https://www.instagram.com/ichetanparihar/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="../index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i><span>Information</span></a></li>
+          <li><a href="../index.html#services" class="nav-link scrollto"><i class="bx bx-server"></i><span>Projects</span></a></li>
+          <li><a href="../index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i><span>Certificates</span></a></li>
+          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i><span>Contact</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header><main id="main">
+
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Project Details</h2>
+        <ol>
+          <li><a href="../index.html#services">Projects</a></li>
+          <li>ROS 2 Debugging App</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <section id="portfolio-details" class="portfolio-details section-bg">
+    <div class="container">
+      <div class="row gy-4">
+
+        <div class="col-lg-4">
+          <div class="sticky-sidebar">
+            
+            <div class="portfolio-details-slider swiper mb-4 rounded shadow-sm">
+              <div class="swiper-wrapper align-items-center">
+                <div class="slideshow swiper-slide"><img src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Topic Monitor.png" alt=""></div>
+                <div class="slideshow swiper-slide"><img src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Topic Monitor_1.png" alt=""></div>
+                <div class="slideshow swiper-slide"><img src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Node_Graph.png" alt=""></div>
+                <div class="slideshow swiper-slide"><img src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Node_Graph_1.png" alt=""></div>
+                <div class="slideshow swiper-slide"><img src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Tree.png" alt=""></div>
+                <div class="slideshow swiper-slide"><img src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Performance_power.png" alt=""></div>
+                <div class="slideshow swiper-slide"><img src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Ros_bag.png" alt=""></div>
+                <div class="slideshow swiper-slide"><img src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/util_Bag.png" alt=""></div>
+                <div class="slideshow swiper-slide"><img src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/util_serice.png" alt=""></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="project-card">
+              <h3>Project Information</h3>
+              <ul class="list-unstyled">
+                <li class="mb-2"><strong>Category:</strong> Robotics Software Tool</li>
+                <li class="mb-2"><strong>Platform:</strong> Desktop (Linux)</li>
+                <li class="mb-2"><strong>Date:</strong> 4 Dec 2025</li>
+                <li class="mb-3">
+                  <strong>Tech Stack:</strong><br>
+                  <span class="badge badge-tech">ROS 2</span>
+                  <span class="badge badge-tech">Python</span>
+                  <span class="badge badge-tech">Qt / PyQt</span>
+                  <span class="badge badge-tech">rclpy</span>
+                </li>
+                <li>
+                  <a href="https://github.com/chetan-parihar/ros2_debugging_app.git" target="_blank" class="btn btn-primary w-100">
+                    <i class="bi bi-github"></i> View on GitHub
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          
+          <div class="project-card">
+            <h3>Overview</h3>
+            <p>
+              This project is a <b>GUI-based ROS 2 debugging and monitoring application</b>
+              built to simplify the inspection and analysis of complex robotic systems.
+              It consolidates commonly used ROS 2 debugging workflows into a single,
+              intuitive desktop interface—reducing reliance on multiple CLI tools like <code>ros2 topic list</code> or <code>ros2 node list</code>.
+            </p>
+          </div>
+
+          <h3 class="mb-4">Key Features</h3>
+
+          <div class="project-card">
+            <h4><i class="bi bi-list-ul feature-icon"></i> Topic Monitor</h4>
+            <p>
+              Displays a live list of all active ROS 2 topics with message types,
+              publisher/subscriber counts, and frequency. Supports quick inspection
+              through a built-in echo tool and context-based copy actions.
+            </p>
+            <img class="feature-img" src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Topic Monitor_1.png" alt="Topic Monitor UI">
+          </div>
+
+          <div class="project-card">
+            <h4><i class="bi bi-diagram-3 feature-icon"></i> Nodes & Graph View</h4>
+            <p>
+              Visualizes the complete ROS 2 computation graph. Provides a structured
+              tree view of publishers, subscribers, services, and topic connections
+              for each node, with filtering support.
+            </p>
+            <img class="feature-img" src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Node_Graph.png" alt="Node Graph Visualization">
+          </div>
+
+          <div class="project-card">
+            <h4><i class="bi bi-diagram-2 feature-icon"></i> TF Tree Visualizer</h4>
+            <p>
+              Automatically generates the TF (Transform) tree, exports it as a PDF, and renders
+              it inside the application. Includes a static TF publisher utility and
+              auto-refresh for dynamic frame updates.
+            </p>
+            <img class="feature-img" src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Tree.png" alt="TF Tree View">
+          </div>
+
+          <div class="project-card">
+            <h4><i class="bi bi-speedometer2 feature-icon"></i> Performance & Power</h4>
+            <p>
+              Monitors real-time CPU, RAM, Disk I/O, and Network usage. Provides
+              per-node ROS resource consumption and estimates system power usage.
+              Includes a searchable ROS and system log viewer.
+            </p>
+            <img class="feature-img" src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Performance_power.png" alt="Performance Monitoring">
+          </div>
+
+          <div class="project-card">
+            <h4><i class="bi bi-tools feature-icon"></i> Utilities (Bag & Services)</h4>
+            <p>
+              Integrated tools for recording and playing ROS bag files
+              (<code>.mcap</code> / <code>.db3</code>), speed-controlled playback,
+              and a GUI-based service caller supporting JSON and YAML requests.
+            </p>
+            <div class="row">
+              <div class="col-md-6">
+                 <img class="feature-img" src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/util_serice.png" alt="Service Caller">
+              </div>
+              <div class="col-md-6">
+                <img class="feature-img" src="../Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/util_Bag.png" alt="Rosbag Utility">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <a href="../Web_pages/AI_Assistance_Annotation_App.html#scrollhere" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-right-short"></i>
+  </a>
+
+  <script src="../Extra_files/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../Extra_files/vendor/aos/aos.js"></script>
+  <script src="../Extra_files/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../Extra_files/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../Extra_files/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../Extra_files/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../Extra_files/vendor/typed.js/typed.umd.js"></script>
+  <script src="../Extra_files/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../Extra_files/vendor/php-email-form/validate.js"></script>
+
+  <script src="../Extra_files/js/main.js"></script>
+
+</body>
+</html>
