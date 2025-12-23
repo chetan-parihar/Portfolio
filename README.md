@@ -2,7 +2,7 @@
 
 [![Portfolio Live](https://img.shields.io/badge/Live_Demo-View_Portfolio-007bff?style=for-the-badge&logo=github)](https://chetan-parihar.github.io/Portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/chetan-parihar-9188581b7)
-[![Email](https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail)](mailto:iamchetanparihar@gmail.com)
+[![Email](https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail)](mailto:chetanparihar.work@gmail.com)
 
 ## 📖 About
 Welcome to my personal portfolio repository! This website serves as a central hub to showcase my work as a **Robotics & AI Engineer**. It details my journey in bridging the **Sim-to-Real gap**, developing autonomous navigation stacks, and creating developer tools for the ROS 2 ecosystem.
