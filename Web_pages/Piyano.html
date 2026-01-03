@@ -5,158 +5,157 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Project Details</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Piano Game Automation - Chetan Parihar</title>
+  <meta content="Automating Piano Tiles game using Computer Vision and Python." name="description">
+  <meta content="Python, OpenCV, PyAutoGUI, Automation, Game Bot" name="keywords">
 
-  <!-- Favicons -->
   <link href="../Images_and_Videos/main/C Symbol.png" rel="icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="../Extra_files/vendor/aos/aos.css" rel="stylesheet">
   <link href="../Extra_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../Extra_files/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../Extra_files/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="../Extra_files/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="../Extra_files/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../Extra_files/css/theme.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="../Extra_files/css/style.css"" rel="stylesheet">
+
 </head>
 
 <body>
 
-<audio id="myaudio" src="../Audio/BG Music2.mp3" autoplay loop hidden >
-  </audio>
+  <audio id="myaudio" src="../Audio/BG Music2.mp3" autoplay loop hidden></audio>
 
   <script>
     var audio = document.getElementById("myaudio");
-    audio.volume = 0.5;
+    if(audio) audio.volume = 0.5;
   </script>
   
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <i class="bi bi-list mobile-nav-toggle-fix d-xl-none"></i>
 
-  <!-- ======= Header ======= -->
   <header id="header">
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="../Images_and_Videos/main/Profile.jpg" alt="" class="img-fluid rounded-circles">
-        <h1 class="text-light"><a href="../index.html">Chetan Parihar</a></h1>
-        <div class="social-links mt-3 text-center">
+        <img src="../Images_and_Videos/main/Profile.jpg" alt="Chetan Parihar" class="img-fluid rounded-circle" style="margin: 15px auto; display: block; width: 120px; border: 2px solid var(--accent); box-shadow: 0 0 20px rgba(0, 225, 255, 0.3);">
         
+        <h1 class="text-light text-center"><a href="../index.html">Chetan Parihar</a></h1>
+        
+        <div class="social-links mt-3 text-center">
           <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/chetan-parihar" class="facebook"><i class="bx bxl-github"></i></a>
+          <a href="https://github.com/chetan-parihar" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.instagram.com/ichetanparihar/" class="instagram"><i class="bx bxl-instagram"></i></a>
-          
         </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="../index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="../index.html#hero" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <br>
           <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Information</span></a></li>
-          <li><a href="../index.html#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Project's</span></a></li>
+          <br>
+          <li><a href="../index.html#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Skills</span></a></li>
+          <br>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Experience</span></a></li>
+          <br>
+          <li><a href="../index.html#projects" class="nav-link active"><i class="bx bx-server"></i> <span>Projects</span></a></li>
+          <br>
           <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
-      </nav><!-- .nav-menu -->
+      </nav>
     </div>
-  </header><!-- End Header -->
+  </header>
+  
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-
         <div class="d-flex justify-content-between align-items-center">
           <h2>Project Details</h2>
           <ol>
-            <li><a href="../index.html#services">Project</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
             <li>Piyano</li>
           </ol>
         </div>
-
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details section-bg">
+    <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
         <div class="row gy-4">
 
-
-          <div class="col-lg-5">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="slideshow swiper-slide">
-                  <img src="../Images_and_Videos/piyano/Screenshot (5).png" alt="">
+          <div class="col-lg-4">
+            <div class="sticky-sidebar">
+              
+              <div class="portfolio-details-slider swiper mb-4">
+                <div class="swiper-wrapper align-items-center">
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/piyano/Screenshot (5).png" alt=""></div>
+                  <div class="slideshow swiper-slide"><img class="border" src="../Images_and_Videos/piyano/Screenshot (6).png" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/piyano/Screenshot (4).png" alt=""></div>
                 </div>
-
-                <div class=" slideshow swiper-slide">
-                  <img class="border" src="../Images_and_Videos/piyano/Screenshot (6).png" alt="">
-                </div>
-
-                <div class="slideshow swiper-slide">
-                  <img src="../Images_and_Videos/piyano/Screenshot (4).png" alt="">
-                </div>
-
+                <div class="swiper-pagination"></div>
               </div>
-              <div class="swiper-pagination" id="scrollhere"></div>
-            </div>
-          </div>
 
-          <div class="col-lg-8 ">
-            <div class="portfolio-info">
-              <h3>Project Video's</h3>
-
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/v7dKGuB0ZAs?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <div class="project-card">
+                <h3>Project Information</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><strong>Name:</strong> Piano Tiles Automation</li>
+                  <li class="mb-2"><strong>Date:</strong> 14 Dec 2021</li>
+                  <li class="mb-3"><strong>Goal:</strong> High Score Automation</li>
+                  
+                  <li class="mb-3">
+                    <strong>Tech Stack:</strong><br>
+                    <span class="badge badge-tech">Python</span>
+                    <span class="badge badge-tech">OpenCV</span>
+                    <span class="badge badge-tech">PyAutoGUI</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <div class="col-lg-8">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Aim </strong> : To Score in game without Tuching PC</li>
-                <li><strong>Project Technology :</strong>
-                <ol>
-                  <li>Python</li>
-                  <li>OpenCV</li>
-                  <li>PyautoGUT</li>
-                </ol>
-              </li>
-                <li><strong>Project date</strong>: 14 Dec 2021</li>
-              </ul>
+            
+            <div class="project-card">
+              <h3 class="mb-3">Project Demo</h3>
+              <div class="ratio ratio-16x9">
+                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/v7dKGuB0ZAs?autoplay=1&mute=0&loop=1&playlist=v7dKGuB0ZAs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
             </div>
-            <div class="portfolio-description">
-              <h2>Details</h2>
+
+            <div class="project-card">
+              <h2>Project Details</h2>
               <p>
-                The objective of this project was to create an automated solution for playing the piano game (Application) and achieving high scores. To accomplish this, we utilized Python programming along with libraries such as OpenCV and PyAutoGUI.
-<br><br>
-Our implementation follows a simple approach where the program identifies the black-colored keys of the piano and takes the appropriate action, such as clicking on them when they appear on the target point. This allows the user to play the game without manual intervention.
-<br><br>
-However, as the game progresses and increases its speed, we encountered a significant challenge. The program struggled to capture frames at the accelerated pace, resulting in a bottleneck that hindered our progress. Further enhancements were required to address this issue and maintain the effectiveness of the program.
+                The objective of this project was to create an automated bot capable of playing the "Piano Tiles" game and achieving high scores without manual intervention. By leveraging <strong>Computer Vision (OpenCV)</strong>, the program analyzes the screen in real-time.
+              </p>
+              
+              <h4 class="mt-4">How it Works</h4>
+              <p>
+                The logic is straightforward: the program identifies the specific pixel coordinates of the four lanes. It constantly monitors these coordinates for the color black (which represents a tile). When a black pixel is detected, <strong>PyAutoGUI</strong> triggers a click event at that exact location.
+              </p>
+
+              <h4 class="mt-4">Challenges</h4>
+              <p>
+                As the game progresses, the speed of the tiles increases significantly. We encountered a performance bottleneck where the frame processing rate (FPS) of the screen capture could not keep up with the game speed at higher levels, leading to missed clicks.
               </p>
             </div>
+
           </div>
+
         </div>
       </div>
-    </section><!-- End Portfolio Details Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>
+  
+  <a href="./Object Counting.html#scrollhere" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-right-short"></i>
+  </a>
 
-
-
-  <a href="./Object Counting.html#scrollhere" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-right-short"></i></a>
-
-  <!-- Vendor JS Files -->
   <script src="../Extra_files/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../Extra_files/vendor/aos/aos.js"></script>
   <script src="../Extra_files/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -167,9 +166,10 @@ However, as the game progresses and increases its speed, we encountered a signif
   <script src="../Extra_files/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="../Extra_files/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="../Extra_files/js/main.js"></script>
 
-</body>
+  <script src="../Extra_files/js/layout.js"></script>
 
+
+</body>
 </html>

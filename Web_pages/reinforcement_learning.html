@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Reinforcement Learning - Chetan Parihar</title>
+  <meta content="Reinforcement Learning projects using Isaac Sim, Isaac Lab, and PyTorch." name="description">
+  <meta content="Isaac Sim, Isaac Lab, Reinforcement Learning, PPO, PyTorch, Robotics" name="keywords">
+
+  <link href="../Images_and_Videos/main/C Symbol.png" rel="icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link href="../Extra_files/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../Extra_files/css/theme.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <audio id="myaudio" src="../Audio/BG Music2.mp3" autoplay loop hidden></audio>
+
+  <script>
+    var audio = document.getElementById("myaudio");
+    if (audio) audio.volume = 0.5;
+  </script>
+
+  <i class="bi bi-list mobile-nav-toggle-fix d-xl-none"></i>
+
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="../Images_and_Videos/main/Profile.jpg" alt="Chetan Parihar" class="img-fluid rounded-circle"
+          style="margin: 15px auto; display: block; width: 120px; border: 2px solid var(--accent); box-shadow: 0 0 20px rgba(0, 225, 255, 0.3);">
+
+        <h1 class="text-light text-center"><a href="../index.html">Chetan Parihar</a></h1>
+
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i
+              class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/chetan-parihar" class="github"><i class="bx bxl-github"></i></a>
+          <a href="https://www.instagram.com/ichetanparihar/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="../index.html#hero" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a>
+          </li>
+          <br>
+          <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a>
+          </li>
+          <br>
+          <li><a href="../index.html#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i>
+              <span>Skills</span></a></li>
+          <br>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i>
+              <span>Experience</span></a></li>
+          <br>
+          <li><a href="../index.html#projects" class="nav-link active"><i class="bx bx-server"></i>
+              <span>Projects</span></a></li>
+          <br>
+          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i>
+              <span>Contact</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Project Details</h2>
+          <ol>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li>Reinforcement Learning</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="sticky-sidebar">
+              <div class="portfolio-details-slider swiper mb-4">
+                <div class="swiper-wrapper align-items-center">
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/RL/wheel1.png" alt="Wheel Robot"
+                      class="border"></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/RL/walk8.png" alt="Walking Robot"
+                      class="border"></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/RL/cartpole01.png" alt="CartPole"
+                      class="border"></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/RL/wheel3.png"
+                      alt="Wheel Robot Side" class="border"></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/RL/cartpole03.png"
+                      alt="CartPole Env" class="border"></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/RL/walk5.png" alt="Quadruped"
+                      class="border"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+
+              <div class="portfolio-info">
+                <h3>Overview</h3>
+                <p>
+                  This portfolio highlights advanced Reinforcement Learning (RL) implementations using the NVIDIA Isaac
+                  ecosystem. The projects focus on solving continuous control problems, ranging from classic inverted
+                  pendulums to complex quadruped locomotion.
+                </p>
+                <ul>
+                  <li><strong>Stack:</strong> Isaac Sim, Isaac Lab, PyTorch</li>
+                  <li><strong>Hardware:</strong> NVIDIA RTX 5060 Ti (16GB)</li>
+                  <li><strong>Algorithms:</strong> PPO, Manager-Based RL</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <h3 class="mb-4 pb-2 border-bottom">Demo Videos</h3>
+
+            <div class="project-card">
+              <h5>Custom Linear CartPole (Training & Test)</h5>
+              <div class="mb-3">
+                <span class="badge bg-primary badge-tech">Isaac-Sim</span>
+                <span class="badge bg-secondary badge-tech">Isaac-Lab</span>
+                <span class="badge bg-secondary badge-tech">PyTorch</span>
+                <span class="badge bg-secondary badge-tech">Dec-2025</span>
+              </div>
+              <p>
+                Developed a custom Linear CartPole environment to establish a robust RL pipeline. Utilizing the
+                Proximal Policy Optimization (PPO) algorithm and a Manager-Based RL architecture, the agent learned to
+                balance
+                the pole efficiently. By leveraging massive parallelization (50,000 environments) on an RTX 5060 Ti,
+                training convergence was achieved in under 2 minutes.
+              </p>
+
+              <div>
+                <p class="mt-4"><strong>Deployment / Testing Model:</strong></p>
+                <div class="d-flex justify-content-center">
+                  <iframe width="100%" height="315"
+                    src="https://www.youtube.com/embed/XeUHIymWEJs?si=-n7DSbjFZjydTnCN&autoplay=1&mute=0&loop=1&playlist=XeUHIymWEJs"
+                    title="Linear CartPole Testing" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h5>Custom Rotary CartPole (Non-Linear Control)</h5>
+              <div class="mb-3">
+                <span class="badge bg-primary badge-tech">Isaac-Sim</span>
+                <span class="badge bg-secondary badge-tech">Isaac-Lab</span>
+                <span class="badge bg-secondary badge-tech">PyTorch</span>
+                <span class="badge bg-secondary badge-tech">Dec-2025</span>
+              </div>
+              <p>
+                Extended the RL framework to handle rotary mechanics, addressing higher-complexity continuous control
+                challenges.
+                The agent was trained to perform swing-up and balance maneuvers. This project validated the adaptability
+                of the PPO algorithm to non-linear dynamics, achieving full training in approximately 2 minutes on
+                50,000 parallel environments.
+              </p>
+
+              <div class="row mt-4">
+                <div class="col-md-12 mb-4">
+                  <p><strong>Training Phase:</strong></p>
+                  <div class="d-flex justify-content-center">
+                    <iframe width="100%" height="315"
+                      src="https://www.youtube.com/embed/CPNd0UF0cFA?si=3-Mxx_1eXVFe9Yhb&autoplay=1&mute=0&loop=1&playlist=CPNd0UF0cFA"
+                      title="Rotary CartPole Training" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <p><strong>Testing Model:</strong></p>
+                  <div class="d-flex justify-content-center">
+                    <iframe width="100%" height="315"
+                      src="https://www.youtube.com/embed/NJYVKf5TTRs?si=-W9ZxF66BODUpoUE&autoplay=1&mute=0&loop=1&playlist=NJYVKf5TTRs"
+                      title="Rotary CartPole Testing" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h5>Quadruped Locomotion (Work in Progress)</h5>
+              <div class="mb-3">
+                <span class="badge bg-primary badge-tech">Isaac-Sim</span>
+                <span class="badge bg-secondary badge-tech">Isaac-Lab</span>
+                <span class="badge bg-secondary badge-tech">PyTorch</span>
+                <span class="badge bg-secondary badge-tech">Dec-2025</span>
+              </div>
+              <p>
+                Designing a locomotion policy for a custom 12-DOF quadruped robot. The agent has successfully learned
+                fundamental gait mechanics and balance recovery. Current development focuses on refining reward
+                functions to minimize foot slip and improve gait symmetry, bridging the gap between simulation stability
+                and realistic movement.
+              </p>
+
+              <div class="alert alert-info mt-3 mb-3">
+                <i class="bi bi-info-circle-fill"></i> <strong>Status:</strong> Active development. Tuning gait
+                parameters for smoother transitions.
+              </div>
+              <!-- ######################################## -->
+              <div class="row mt-3">
+                <div class="col-md-6 mb-3">
+                  <p class="text-center small text-light mb-1">Just fine-tuning the parameters</p>
+                  <div class="d-flex justify-content-center">
+                    <video class="w-100 border rounded" muted autoplay loop controls playsinline>
+                      <source src="../Images_and_Videos/RL/RL1.webm" type="video/webm">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <p class="text-center small text-light mb-1">Goal: Walking | Result: Learned to Stand</p>
+                  <div class="d-flex justify-content-center">
+                    <video class="w-100 border rounded" muted autoplay loop controls playsinline>
+                      <source src="../Images_and_Videos/RL/RL2.webm" type="video/webm">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ######################################## -->
+
+              <div class="d-flex justify-content-center">
+                <iframe width="100%" height="400"
+                  src="https://www.youtube.com/embed/3ubQg9y1WLk?si=R0dhpOFHv2akA42_&autoplay=1&mute=0&loop=1&playlist=3ubQg9y1WLk"
+                  title="Quadruped Walk Test" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+              </div>
+
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="../Web_pages/ROS_2_Debugging_&_Monitoring_Application.html#portfolio"
+    class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-right-short"></i>
+  </a>
+
+  <script src="../Extra_files/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../Extra_files/vendor/aos/aos.js"></script>
+  <script src="../Extra_files/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../Extra_files/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../Extra_files/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../Extra_files/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../Extra_files/vendor/typed.js/typed.umd.js"></script>
+  <script src="../Extra_files/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../Extra_files/vendor/php-email-form/validate.js"></script>
+  <script src="../Extra_files/js/main.js"></script>
+  <script src="../Extra_files/js/layout.js"></script>
+
+</body>
+
+</html>

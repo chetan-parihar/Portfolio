@@ -5,17 +5,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Project Details</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Flappy Bird Automation - Chetan Parihar</title>
+  <meta content="AI-powered automation of Flappy Bird using YOLOv8 object detection." name="description">
+  <meta content="YOLOv8, Python, Object Detection, Automation, AI" name="keywords">
 
-  <!-- Favicons -->
   <link href="../Images_and_Videos/main/C Symbol.png" rel="icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="../Extra_files/vendor/aos/aos.css" rel="stylesheet">
   <link href="../Extra_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../Extra_files/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -23,136 +21,293 @@
   <link href="../Extra_files/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="../Extra_files/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="../Extra_files/css/style.css"" rel="stylesheet">
+  <style>
+    /* --- VIBRANT TECH THEME INTEGRATION --- */
+    :root {
+      --bg-color: #020617; 
+      --card-bg: rgba(30, 41, 59, 0.6); 
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --accent: #00e1ff; /* Electric Cyan */
+      --accent-secondary: #6366f1; /* Indigo */
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Background Gradient Mesh */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
+                  radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.15), transparent 25%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 { 
+      font-family: 'Exo 2', sans-serif; 
+      color: #fff; 
+      font-weight: 700; 
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: 0.3s; }
+    a:hover { color: #fff; text-shadow: 0 0 10px var(--accent); }
+
+    /* --- SIDEBAR & LAYOUT --- */
+    #header {
+      position: fixed; top: 0; left: 0; bottom: 0; width: 300px;
+      transition: all 0.5s; z-index: 9997; overflow-y: auto;
+      padding: 0 15px; background: rgba(2, 6, 23, 0.95);
+      border-right: 1px solid rgba(255,255,255,0.05);
+    }
+
+    #main { margin-left: 300px; transition: margin-left 0.5s; }
+
+    .profile h1 a { color: #fff; text-decoration: none; }
+    .nav-menu a { color: var(--text-muted); }
+    .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus { color: var(--accent); }
+
+    .mobile-nav-toggle-fix { 
+        position: fixed; right: 15px; top: 15px; z-index: 9999;
+        border: 0; font-size: 24px; transition: all 0.4s; outline: none !important;
+        background-color: var(--accent); color: #020617;
+        width: 40px; height: 40px; display: inline-flex;
+        align-items: center; justify-content: center;
+        line-height: 0; border-radius: 50%; cursor: pointer; 
+    }
+
+    @media (max-width: 1199px) {
+        #header { left: -300px; }
+        #main { margin-left: 0; }
+        body.mobile-nav-active #header { left: 0; }
+        body.mobile-nav-active::before {
+            content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6); z-index: 9996;
+        }
+    }
+
+    /* --- PROJECT CARD STYLES --- */
+    .project-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+      padding: 25px;
+      transition: transform 0.3s ease;
+      color: var(--text-main);
+    }
+    .project-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 40px -10px rgba(0, 225, 255, 0.15);
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs { padding: 20px 0; background: rgba(15, 23, 42, 0.8); border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 40px; }
+    .breadcrumbs h2 { font-size: 26px; font-weight: 300; margin: 0; }
+    .breadcrumbs ol { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; font-size: 15px; }
+    .breadcrumbs ol li + li { padding-left: 10px; }
+    .breadcrumbs ol li + li::before { display: inline-block; padding-right: 10px; color: var(--text-muted); content: "/"; }
+
+    /* Tech Badges */
+    .badge-tech {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: rgba(99, 102, 241, 0.2);
+      color: #fff;
+      border: 1px solid rgba(99, 102, 241, 0.5);
+      display: inline-block;
+    }
+    
+    /* Buttons */
+    .btn-primary {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      transition: 0.3s;
+      width: 100%;
+    }
+    .btn-primary:hover {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    .sticky-sidebar { position: sticky; top: 20px; z-index: 10; }
+    
+    /* Images & Slider */
+    .portfolio-details-slider .swiper-slide img { width: 100%; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
+    .swiper-pagination .swiper-pagination-bullet-active { background: var(--accent); }
+
+    /* Video Frame */
+    iframe {
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      background: #000;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed; visibility: hidden; opacity: 0; right: 15px; bottom: 15px;
+      z-index: 996; background: var(--accent); width: 40px; height: 40px;
+      border-radius: 4px; transition: all 0.4s;
+    }
+    .back-to-top i { font-size: 28px; color: #020617; line-height: 0; }
+    .back-to-top:hover { background: var(--accent-secondary); color: #fff; }
+    .back-to-top.active { visibility: visible; opacity: 1; }
+
+  </style>
 </head>
 
 <body>
 
-<!-- <audio id="myaudio" src="../Audio/BG Music2.mp3" autoplay loop hidden >
-  </audio>
+  <audio id="myaudio" src="../Audio/BG Music2.mp3" autoplay loop hidden></audio>
 
   <script>
     var audio = document.getElementById("myaudio");
-    audio.volume = 0.5;
-  </script> -->
+    if(audio) audio.volume = 0.5;
+  </script>
   
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <i class="bi bi-list mobile-nav-toggle-fix d-xl-none"></i>
 
-  <!-- ======= Header ======= -->
   <header id="header">
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="../Images_and_Videos/main/Profile.jpg" alt="" class="img-fluid rounded-circles">
-        <h1 class="text-light"><a href="../index.html">Chetan Parihar</a></h1>
-        <div class="social-links mt-3 text-center">
+        <img src="../Images_and_Videos/main/Profile.jpg" alt="Chetan Parihar" class="img-fluid rounded-circle" style="margin: 15px auto; display: block; width: 120px; border: 2px solid var(--accent); box-shadow: 0 0 20px rgba(0, 225, 255, 0.3);">
         
+        <h1 class="text-light text-center"><a href="../index.html">Chetan Parihar</a></h1>
+        
+        <div class="social-links mt-3 text-center">
           <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/chetan-parihar" class="facebook"><i class="bx bxl-github"></i></a>
+          <a href="https://github.com/chetan-parihar" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.instagram.com/ichetanparihar/" class="instagram"><i class="bx bxl-instagram"></i></a>
-          
         </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="../index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="../index.html#hero" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <br>
           <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Information</span></a></li>
-          <li><a href="../index.html#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Project's</span></a></li>
+          <br>
+          <li><a href="../index.html#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Skills</span></a></li>
+          <br>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Experience</span></a></li>
+          <br>
+          <li><a href="../index.html#projects" class="nav-link active"><i class="bx bx-server"></i> <span>Projects</span></a></li>
+          <br>
           <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
-      </nav><!-- .nav-menu -->
+      </nav>
     </div>
-  </header><!-- End Header -->
+  </header>
+  
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-
         <div class="d-flex justify-content-between align-items-center">
           <h2>Project Details</h2>
           <ol>
-            <li><a href="../index.html#services">Project</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
             <li>Flappy Bird</li>
           </ol>
         </div>
-
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details section-bg">
+    <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
         <div class="row gy-4">
 
-
-          <div class="col-lg-5">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="slideshow swiper-slide">
-                  <img src="../Images_and_Videos/Flappy_bird/Screenshot (48)_copy.png" alt="">
+          <div class="col-lg-4">
+            <div class="sticky-sidebar">
+              
+              <div class="portfolio-details-slider swiper mb-4">
+                <div class="swiper-wrapper align-items-center">
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Flappy_bird/Screenshot (48)_copy.png" alt=""></div>
+                  <div class="slideshow swiper-slide"><img class="border" src="../Images_and_Videos/Flappy_bird/Screenshot (49).png" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Flappy_bird/Screenshot (50).png" alt=""></div>
                 </div>
-
-                <div class=" slideshow swiper-slide">
-                  <img class="border" src="../Images_and_Videos/Flappy_bird/Screenshot (49).png" alt="">
-                </div>
-
-                <div class="slideshow swiper-slide">
-                  <img src="../Images_and_Videos/Flappy_bird/Screenshot (50).png" alt="">
-                </div>
-
+                <div class="swiper-pagination"></div>
               </div>
-              <div class="swiper-pagination" id="scrollhere"></div>
-            </div>
-          </div>
 
-          <div class="col-lg-8 ">
-            <div class="portfolio-info">
-              <h3>Project Video's</h3>
+              <div class="project-card">
+                <h3>Project Information</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><strong>Name:</strong> Flappy Bird Automation</li>
+                  <li class="mb-2"><strong>Date:</strong> 5 Mar 2024</li>
+                  <li class="mb-3"><strong>Goal:</strong> AI-Driven Game Control</li>
+                  
+                  <li class="mb-3">
+                    <strong>Tech Stack:</strong><br>
+                    <span class="badge badge-tech">Python</span>
+                    <span class="badge badge-tech">YOLOv8</span>
+                    <span class="badge badge-tech">Computer Vision</span>
+                  </li>
 
-              <iframe width="100%" height="500" src="https://www.youtube.com/embed/56SYWHr53C8?si=VZ27J2MAkJRTkNSP&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <li>
+                     <a href="https://github.com/chetan-parihar/Flappy-Bird-Automation" target="_blank" class="btn btn-primary mt-2">
+                        <i class="bi bi-github"></i> View Source Code
+                     </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <div class="col-lg-8">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
+            
+            <div class="project-card">
+              <h3 class="mb-3">Project Demo</h3>
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/56SYWHr53C8?si=VZ27J2MAkJRTkNSP&autoplay=1&mute=0&loop=1&playlist=8jiZVic4Rd8" title="Flappy Bird Demo" allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h2>Project Details</h2>
+              <p>
+                The goal of this project was to automate the popular game "Flappy Bird" using real-time object detection. By leveraging the power of <strong>YOLOv8</strong>, the system identifies the bird's position relative to the pipes in real-time.
+              </p>
+              
+              <h4 class="mt-4">Logic & Implementation</h4>
               <ul>
-                <li><strong>Aim </strong> : To Automate the Flappy Bird Game </li>
-                <li><strong>Project Technology :</strong>
-                <ol>
-                  <li>Python</li>
-                  <li>YOLOv8</li>
-                </ol>
-              </li>
-                <li><strong>Project date</strong>: 5 Mar 2024</li>
-                <li><strong>Project URL</strong>: <a href="https://github.com/chetan-parihar/Flappy-Bird-Automation">Click Here</a></li>
+                <li><strong>Object Detection:</strong> YOLOv8 is trained/used to detect the specific game assets (The Bird, Upper Pipe, Lower Pipe).</li>
+                <li><strong>Decision Making:</strong> The algorithm calculates the gap between pipes. If the bird's vertical position falls below a certain threshold relative to the gap, a "Jump" command is simulated.</li>
+                <li><strong>Outcome:</strong> The system keeps the bird centered between obstacles, effectively playing the game indefinitely without human intervention.</li>
               </ul>
             </div>
-            <div class="portfolio-description">
-              <h2>Details</h2>
-              <p>
-                In this project, YOLOv8 is used to detect the bird and pipes.<br><br>Based on the rules, the program keeps the bird between both pipes.
-              </p>
-            </div>
+
           </div>
+
         </div>
       </div>
-    </section><!-- End Portfolio Details Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>
+  
+  <a href="./Piyano.html#scrollhere" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-right-short"></i>
+  </a>
 
-
-
-  <a href="./Piyano.html#scrollhere" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-right-short"></i></a>
-
-  <!-- Vendor JS Files -->
   <script src="../Extra_files/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../Extra_files/vendor/aos/aos.js"></script>
   <script src="../Extra_files/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -163,9 +318,49 @@
   <script src="../Extra_files/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="../Extra_files/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="../Extra_files/js/main.js"></script>
 
-</body>
+  <script>
+    (function() {
+      "use strict";
+      
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle-fix');
+      
+      if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', function(e) {
+            document.body.classList.toggle('mobile-nav-active');
+            this.classList.toggle('bi-list');
+            this.classList.toggle('bi-x');
+        });
+      }
 
+      document.addEventListener('click', function(e) {
+          if (document.body.classList.contains('mobile-nav-active')) {
+              const header = document.querySelector('#header');
+              const toggle = document.querySelector('.mobile-nav-toggle-fix');
+              
+              if (!header.contains(e.target) && !toggle.contains(e.target)) {
+                  document.body.classList.remove('mobile-nav-active');
+                  toggle.classList.remove('bi-x');
+                  toggle.classList.add('bi-list');
+              }
+          }
+      });
+      
+      const backToTop = document.querySelector('.back-to-top');
+      if (backToTop) {
+        const toggleBacktotop = () => {
+          if (window.scrollY > 100) {
+            backToTop.classList.add('active')
+          } else {
+            backToTop.classList.remove('active')
+          }
+        }
+        window.addEventListener('load', toggleBacktotop);
+        document.addEventListener('scroll', toggleBacktotop);
+      }
+    })();
+  </script>
+
+</body>
 </html>

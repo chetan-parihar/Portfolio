@@ -6,25 +6,337 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Chetan Parihar - Robotics & AI Portfolio</title>
-  <meta
-    content="Portfolio of Chetan Parihar, a Robotics and AI engineer specializing in ROS 2, SLAM, and Computer Vision."
-    name="description">
+  <meta content="Portfolio of Chetan Parihar, a Robotics and AI engineer specializing in ROS 2, SLAM, and Computer Vision." name="description">
   <meta content="Robotics, AI, ROS 2, SLAM, Computer Vision, Portfolio" name="keywords">
 
   <link href="Images_and_Videos/main/C Symbol.png" rel="icon">
 
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link href="Extra_files/vendor/aos/aos.css" rel="stylesheet">
-  <link href="Extra_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="Extra_files/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="Extra_files/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="Extra_files/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="Extra_files/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
 
-  <link href="Extra_files/css/style.css" rel="stylesheet">
+  <style>
+    /* --- VIBRANT TECH THEME --- */
+    :root {
+      --bg-color: #020617; 
+      --card-bg: rgba(30, 41, 59, 0.6); 
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      
+      /* Vibrant Accents */
+      --accent: #00e1ff; /* Electric Cyan */
+      --accent-secondary: #6366f1; /* Indigo */
+      --gradient-text: linear-gradient(to right, #00e1ff, #6366f1);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Scroll Offset for fixed header */
+    section {
+      scroll-margin-top: 0;
+    }
+    @media(min-width: 1200px) {
+        section { scroll-margin-top: 0; }
+    }
+
+    /* Background Gradient Mesh */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
+                  radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.15), transparent 25%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 { 
+      font-family: 'Exo 2', sans-serif; 
+      color: #fff; 
+      font-weight: 700; 
+    }
+    
+    a { color: var(--accent); text-decoration: none; transition: 0.3s; }
+    a:hover { color: #fff; text-shadow: 0 0 10px var(--accent); }
+
+    /* Header/Nav */
+    #header { 
+      position: fixed; top: 0; left: 0; bottom: 0; width: 300px;
+      transition: all ease-in-out 0.5s; z-index: 9997; 
+      padding: 0 15px; 
+      background: rgba(2, 6, 23, 0.85); 
+      backdrop-filter: blur(10px); 
+      border-right: 1px solid rgba(255,255,255,0.05); 
+      overflow-y: auto;
+      
+      /* FIX: Custom Scrollbar Styling */
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) transparent;
+    }
+
+    /* Webkit Scrollbar Styling (Chrome, Edge, Safari) */
+    #header::-webkit-scrollbar {
+        width: 6px;
+    }
+    #header::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    #header::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 225, 255, 0.3);
+        border-radius: 20px;
+    }
+    #header::-webkit-scrollbar-thumb:hover {
+        background-color: var(--accent);
+    }
+    
+    .profile img { 
+      margin: 15px auto; display: block; width: 120px; 
+      border: 2px solid var(--accent); 
+      box-shadow: 0 0 20px rgba(0, 225, 255, 0.3); 
+    }
+    .profile h1 { font-size: 24px; margin: 0; padding: 0; font-weight: 600; text-align: center; font-family: "Exo 2", sans-serif; }
+    .profile .social-links a { font-size: 18px; display: inline-block; background: rgba(255,255,255,0.05); color: #fff; line-height: 1; padding: 8px 0; margin-right: 4px; border-radius: 50%; text-align: center; width: 36px; height: 36px; transition: 0.3s; }
+    .profile .social-links a:hover { background: var(--accent); color: #020617; text-decoration: none; }
+
+    .nav-menu { padding: 30px 0 0 0; }
+    .nav-menu * { margin: 0; padding: 0; list-style: none; }
+    .nav-menu > ul > li { position: relative; white-space: nowrap; }
+    .nav-menu a, .nav-menu a:focus { display: flex; align-items: center; color: var(--text-muted); padding: 12px 15px; margin-bottom: 8px; transition: 0.3s; font-size: 15px; }
+    .nav-menu a i, .nav-menu a:focus i { font-size: 24px; padding-right: 8px; color: var(--text-muted); }
+    .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus { color: #fff; text-decoration: none; }
+    .nav-menu .active i, .nav-menu a:hover i { color: var(--accent); }
+
+    .mobile-nav-toggle { position: fixed; right: 15px; top: 15px; z-index: 9998; border: 0; font-size: 24px; transition: all 0.4s; outline: none !important; background-color: var(--accent); color: #020617; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; line-height: 0; border-radius: 50%; cursor: pointer; }
+    .mobile-nav-active #header { left: 0; }
+    
+    /* Main Content Area */
+    #main { margin-left: 300px; }
+    @media (max-width: 1199px) { #header { left: -300px; } #main { margin-left: 0; } }
+
+    /* --- ANIMATED HERO SECTION --- */
+    #hero {
+      width: 100%; 
+      height: 100vh; 
+      position: relative;
+      background: transparent; 
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Canvas needs absolute positioning to sit behind text */
+    #hero-canvas { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        z-index: 1; /* Behind content */
+        display: block;
+    }
+
+    .hero-container { position: relative; z-index: 2; text-align: center; padding: 0 15px; }
+
+    #hero h1 { 
+      font-size: 60px; line-height: 1; margin-bottom: 15px;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 20px rgba(0, 225, 255, 0.2));
+    }
+    @media (max-width: 768px) { #hero h1 { font-size: 40px; } }
+
+    #hero p { font-size: 20px; color: var(--text-muted); max-width: 800px; margin: 0 auto; }
+    #hero p span { color: var(--accent); border-bottom: 2px solid var(--accent-secondary); }
+    
+    /* View My Projects Button */
+    .btn-hero {
+      margin-top: 35px; display: inline-block; padding: 12px 35px;
+      border-radius: 50px; background: rgba(2, 6, 23, 0.5);
+      border: 2px solid var(--accent); color: var(--accent);
+      font-family: 'Exo 2', sans-serif; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 225, 255, 0.2);
+      cursor: pointer;
+    }
+    .btn-hero:hover {
+      background: var(--accent); color: #020617;
+      box-shadow: 0 0 30px rgba(0, 225, 255, 0.6);
+      transform: translateY(-3px);
+      text-decoration: none;
+    }
+
+    /* Section Styling */
+    section { padding: 60px 0; overflow: hidden; }
+    .section-title { padding-bottom: 30px; }
+    .section-title h2 { color: #fff; position: relative; display: inline-block; margin-bottom: 15px; font-size: 32px; }
+    .section-title h2::after { content: ''; position: absolute; display: block; width: 100%; height: 3px; background: var(--gradient-text); bottom: -5px; left: 0; }
+    .section-title p { margin-bottom: 0; color: var(--text-muted); }
+    .section-bg { background-color: rgba(15, 23, 42, 0.5); }
+
+    /* About Content */
+    .about-content { font-size: 16px; line-height: 1.8; color: var(--text-muted); }
+    .about-content b { color: var(--accent); }
+
+    /* --- PROJECT CARDS --- */
+    .project-card {
+      background: var(--card-bg); backdrop-filter: blur(10px);
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.4s ease; height: 100%; position: relative;
+    }
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: var(--accent);
+      box-shadow: 0 10px 40px -10px rgba(0, 225, 255, 0.3);
+    }
+    
+    /* FIX: Image Wrapper to Show Full Image */
+    .project-img-wrapper { 
+      position: relative; 
+      height: 200px; 
+      overflow: hidden; 
+      background: #020617; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-img-wrapper img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: contain; 
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    }
+    
+    .project-card:hover .project-img-wrapper img { transform: scale(1.05); }
+    
+    .project-overlay {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(2, 6, 23, 0.85);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .project-card:hover .project-overlay { opacity: 1; }
+    
+    .view-btn {
+      background: linear-gradient(45deg, var(--accent-secondary), var(--accent));
+      color: #fff; padding: 10px 24px; border-radius: 30px;
+      font-weight: 700; font-family: 'Exo 2', sans-serif;
+      box-shadow: 0 4px 15px rgba(0, 225, 255, 0.4);
+      text-decoration: none;
+    }
+    
+    .project-info { padding: 25px; }
+    .project-info h4 { font-size: 1.2rem; margin-bottom: 5px; }
+    .project-info h4 a { color: #fff; }
+    .project-info h4 a:hover { color: var(--accent); }
+    .project-info .date { font-size: 0.85rem; color: var(--text-muted); font-style: italic; display: block; margin-top: 10px; text-align: right; }
+
+    /* Resume Timeline */
+    .resume .resume-item {
+      padding: 0 0 20px 20px; margin-top: -2px;
+      border-left: 2px solid var(--accent-secondary);
+      position: relative;
+    }
+    .resume .resume-item h4 { line-height: 18px; font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+    .resume .resume-item h5 { font-size: 16px; background: rgba(255,255,255,0.1); padding: 5px 15px; display: inline-block; font-weight: 600; margin-bottom: 10px; border-radius: 4px; color: var(--accent); }
+    .resume .resume-item::before { content: ""; position: absolute; width: 16px; height: 16px; border-radius: 50px; left: -9px; top: 0; background: var(--bg-color); border: 2px solid var(--accent); }
+    .resume h3.resume-title { font-size: 26px; font-weight: 700; margin-top: 20px; margin-bottom: 20px; color: var(--accent); }
+    .resume ul { padding-left: 20px; color: var(--text-muted); }
+    .resume ul li { padding-bottom: 10px; }
+
+    /* Skills */
+    .skills-content ul { list-style: none; padding: 0; }
+    .skills-content ul li { padding-bottom: 10px; display: flex; align-items: center; color: var(--text-muted); }
+    .skills-content ul li i { font-size: 20px; padding-right: 10px; color: var(--accent); }
+
+
+    /* --- NEW CONTACT SECTION STYLING --- */
+    .contact .info-box {
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(214, 215, 216, 0.05);
+      padding: 30px 20px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+      height: 100%;
+    }
+
+    .contact .info-box:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 40px -10px rgba(0, 225, 255, 0.3);
+    }
+
+    .contact .info-box i {
+      font-size: 36px;
+      color: var(--accent);
+      border-radius: 50%;
+      padding: 10px;
+      background: rgba(0, 225, 255, 0.1);
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+    
+    .contact .info-box h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 10px 0;
+      font-family: "Exo 2", sans-serif;
+    }
+
+    .contact .info-box p {
+      padding: 0;
+      line-height: 24px;
+      font-size: 15px;
+      margin-bottom: 0;
+      color: var(--text-muted);
+    }
+    
+    .contact .social-links { margin-top: 15px; display: flex; justify-content: center; gap: 15px; }
+    .contact .social-links a {
+      font-size: 20px;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      line-height: 1;
+      padding: 10px;
+      border-radius: 50%;
+      text-align: center;
+      width: 44px;
+      height: 44px;
+      transition: 0.3s;
+    }
+    .contact .social-links a:hover {
+      background: var(--accent);
+      color: #020617;
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    .blink { animation: blinker 1.5s linear infinite; font-weight: bold; color: var(--accent); font-size: 0.8rem; text-transform: uppercase; margin-right: 5px; }
+    @keyframes blinker { 50% { opacity: 0; } }
+
+  </style>
 </head>
 
 <body>
@@ -35,86 +347,86 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="Images_and_Videos/main/Profile.jpg" alt="" class="img-fluid rounded-circle">
+        <img src="Images_and_Videos/main/Profile.jpg" alt="Chetan Parihar" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Chetan Parihar</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i
-              class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/chetan-parihar" class="facebook"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/chetan-parihar" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.instagram.com/ichetanparihar/" class="instagram"><i class="bx bxl-instagram"></i></a>
         </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"> </i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"> </i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"> </i> <span>Experience</span></a>
-          </li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"> </i> <span>Projects</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"> </i> <span>Contact</span></a></li>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Skills</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Experience</span></a></li>
+          <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Projects</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
           <li><span class="text-muted small ps-3">Last update: Dec 2025</span></li>
         </ul>
       </nav>
     </div>
   </header>
+
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <canvas id="hero-canvas"></canvas>
+
     <div class="hero-container" data-aos="fade-in">
       <h1>Chetan Parihar</h1>
-      <p>I am experienced in <span class="typed"
-          data-typed-items="ROS 2, PyTorch, Computer Vision, Reinforcement Learning, LLM, YOLOv8, Python (OOP), C++, Unity"></span>
-      </p>
+      <p>I am experienced in <span class="typed" data-typed-items="ROS 2, PyTorch, Computer Vision, Reinforcement Learning, LLM, YOLOv8, Python (OOP), C++, Unity"></span></p>
+      
+      <a href="#projects" class="btn-hero scrollto">View Projects <i class="bi bi-arrow-down-short"></i></a>
     </div>
   </section>
+
   <main id="main">
 
-    <section id="about" class="about">
-      <div class="container">
+    <section id="about" class="about section-bg">
+      <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>About</h2>
-          <p>
-            <b>A</b>i and Robotics engineer with hands-on experience developing autonomous navigation, SLAM, and
-            simulation-driven robotic systems.
-
+        </div>
+        <div class="row">
+          <div class="col-lg-12 about-content">
+            <p>
+              <b>A</b>i and Robotics engineer with hands-on experience developing autonomous navigation, SLAM, and simulation-driven robotic systems.
+            </p>
             <br>
-            Worked on AMR, humanoid, quadruped, and manipulator platforms using ROS 2, LiDAR, depth cameras, and
-            high-fidelity simulation. Experienced in integrating AI models, imitation and reinforcement learning
-            pipelines, and deploying systems from simulation to real-world robots with a strong focus on scalable
-            software architecture.
-
-            <!-- <b>M</b>y educational background in computer science has equipped me with a solid foundation in programming,
-            algorithms, and software development. -->
-          </p>
+            <p>
+              Worked on AMR, humanoid, quadruped, and manipulator platforms using ROS 2, LiDAR, depth cameras, and high-fidelity simulation. Experienced in integrating AI models, imitation and reinforcement learning pipelines, and deploying systems from simulation to real-world robots with a strong focus on scalable software architecture.
+            </p>
+          </div>
         </div>
       </div>
     </section>
-    <section id="skills" class="skills section-bg">
+
+    <section id="skills" class="skills">
       <div class="container">
-
         <div class="section-title">
-          <h2>Skills</h2>
-          <p><b>I</b> have proactively pursued self-learning and leveraged various online learning platforms to acquire
-            a diverse set of skills.</p>
+          <h2>Technical Skills</h2>
+          <p>I have proactively pursued self-learning and leveraged various online learning platforms to acquire a diverse set of skills.</p>
         </div>
-
         <div class="row skills-content">
           <div class="col-lg-6" data-aos="fade-up">
             <ul>
               <li><i class="bi bi-chevron-right"></i> <strong>Core:</strong> Python (OOP), C++, C</li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Robotics:</strong> ROS 2 (Humble/Jazzy), Nav2, RTAB-MAP,
-                MoveIt 2</li>
-              <li><i class="bi bi-chevron-right"></i> <strong>AI & CV:</strong> PyTorch, YOLOv8, OpenCV, MediaPipe, LLM, huggingface
-                ,Reinforcement Learning</li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Simulation:</strong> Isaac Sim, Isaac Lab, Ignition Gazebo
-              </li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Tools:</strong>  Git, Linux, AutoCAD (Fusion360)
-              </li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Robotics:</strong> ROS 2 (Humble/Jazzy), Nav2, RTAB-MAP, MoveIt 2</li>
+              <li><i class="bi bi-chevron-right"></i> <strong>AI & CV:</strong> PyTorch, YOLOv8, OpenCV, MediaPipe, LLM, huggingface, Reinforcement Learning</li>
+            </ul>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+             <ul>
+              <li><i class="bi bi-chevron-right"></i> <strong>Simulation:</strong> Isaac Sim, Isaac Lab, Ignition Gazebo</li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Tools:</strong> Git, Linux, AutoCAD (Fusion360)</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-    <section id="resume" class="resume">
+
+    <section id="resume" class="resume section-bg">
       <div class="container">
         <div class="section-title">
           <h2>Experience & Education</h2>
@@ -122,47 +434,29 @@
 
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
-<h3 class="resume-title">Professional Experience</h3>
+            <h3 class="resume-title">Professional Experience</h3>
 
             <div class="resume-item">
-              <h3><a href="https://muksrobotics.com/">MuksRobotics</a></h3>
+              <h3><a href="https://muksrobotics.com/" target="_blank" style="color:white;">MuksRobotics</a></h3>
               <h4>Robotics Engineer</h4>
               <h5>April 2025 – December 2025</h5>
               <ul>
-                <li>
-                  <strong>Autonomous Navigation Systems:</strong> Developed navigation stacks using 2D LiDAR, 3D LiDAR, and RGB-D cameras across AMR, Humanoid, and Quadruped platforms (Spaceo Pro, SpaceoM1 Gen3, Unitree Go2).
-                </li>
-                <li>
-                  <strong>Semantic SLAM & VLMs:</strong> Designed Semantic SLAM pipelines by extending classical navigation with Vision-Language Models (VLMs) for object-level environment understanding. Integrat semantic metadata into the navigation stack to support language-guided commands (e.g., “go near the red chair”).
-                  
-                </li>
-                <li>
-                  <strong>Robot SDK Architecture:</strong> Architected a scalable Robot SDK to abstract hardware interfaces, enabling seamless integration between low-level control, AI modules, and high-level software for both Ignition Gazebo simulation and real-robot deployment.
-                </li>
-                <li>
-                  <strong>High-Performance Compute:</strong> Implemented multi-sensor navigation on Unitree Go2 Air using Unitree 4D L2 LiDAR and Intel RealSense D435i, leveraging <b>RTAB-Map (ROS 2)</b> on NVIDIA Jetson AGX Orin.
-                </li>
+                <li><strong>Autonomous Navigation Systems:</strong> Developed navigation stacks using 2D LiDAR, 3D LiDAR, and RGB-D cameras across AMR, Humanoid, and Quadruped platforms (Spaceo Pro, SpaceoM1 Gen3, Unitree Go2).</li>
+                <li><strong>Semantic SLAM & VLMs:</strong> Designed Semantic SLAM pipelines by extending classical navigation with Vision-Language Models (VLMs) for object-level environment understanding. Integrated semantic metadata into the navigation stack to support language-guided commands (e.g., “go near the red chair”).</li>
+                <li><strong>Robot SDK Architecture:</strong> Architected a scalable Robot SDK to abstract hardware interfaces, enabling seamless integration between low-level control, AI modules, and high-level software for both Ignition Gazebo simulation and real-robot deployment.</li>
+                <li><strong>High-Performance Compute:</strong> Implemented multi-sensor navigation on Unitree Go2 Air using Unitree 4D L2 LiDAR and Intel RealSense D435i, leveraging <b>RTAB-Map (ROS 2)</b> on NVIDIA Jetson AGX Orin.</li>
               </ul>
             </div>
 
             <div class="resume-item">
-              <h3><a href="https://muksrobotics.com/">MuksRobotics</a></h3>
+              <h3><a href="https://muksrobotics.com/" target="_blank" style="color:white;">MuksRobotics</a></h3>
               <h4>AI & Robotics Intern</h4>
               <h5>August 2024 – February 2025</h5>
               <ul>
-                <li>
-                  <strong>Simulation Environments:</strong> Built reusable workflows in Gazebo Classic and Ignition Gazebo for mobile and manipulator robots. Created high-fidelity environments using Blender assets to evaluate ACT-based manipulation policies.
-                </li>
-                <li>
-                  <strong>Manipulation & Sim-to-Real:</strong> Integrated MoveIt 2 for the RoArm-M2-S robotic arm. Successfully trained Action Chunking Transformer (ACT) policies in simulation and deployed them to the real robot for validation.
-                  
-                </li>
-                <li>
-                  <strong>Reinforcement Learning:</strong> Gained hands-on experience with control and policy learning workflows using Stable-Baselines3.
-                </li>
-                <li>
-                  <strong>Quadruped Navigation:</strong> Implemented ROS 2 mapping and localization on the Unitree Go1 robot using Nav2 and Slamtec A2M12 2D LiDAR.
-                </li>
+                <li><strong>Simulation Environments:</strong> Built reusable workflows in Gazebo Classic and Ignition Gazebo for mobile and manipulator robots. Created high-fidelity environments using Blender assets to evaluate ACT-based manipulation policies.</li>
+                <li><strong>Manipulation & Sim-to-Real:</strong> Integrated MoveIt 2 for the RoArm-M2-S robotic arm. Successfully trained Action Chunking Transformer (ACT) policies in simulation and deployed them to the real robot for validation.</li>
+                <li><strong>Reinforcement Learning:</strong> Gained hands-on experience with control and policy learning workflows using Stable-Baselines3.</li>
+                <li><strong>Quadruped Navigation:</strong> Implemented ROS 2 mapping and localization on the Unitree Go1 robot using Nav2 and Slamtec A2M12 2D LiDAR.</li>
               </ul>
             </div>
 
@@ -186,27 +480,18 @@
                 <li>Built and evaluated machine learning models to solve data-driven problems.</li>
               </ul>
             </div>
-          
-          
-          
-          
           </div>
 
-
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
+            
             <h3 class="resume-title">Research & Publications</h3>
             <div class="resume-item">
               <h4>AI-Assisted Image Annotation System</h4>
               <h5>Published: April 2025 | IRJMETS</h5>
               <ul>
-                <li><strong>Abstract:</strong> Proposed a semi-automated annotation workflow using YOLOv8. The system
-                  employs an iterative active learning mechanism that reduces manual labeling effort by 70-80%.</li>
-
-                <li><strong>DOI:</strong> <a href="Images_and_Videos/research_paper/IRJMETS70400172416.pdf"
-                    target="_blank">10.56726/IRJMETS73213</a></li>
-                <li><strong>Read Paper:</strong> <a href="Images_and_Videos/research_paper/IRJMETS70400172416.pdf"
-                    target="_blank">Download PDF</a></li>
+                <li><strong>Abstract:</strong> Proposed a semi-automated annotation workflow using YOLOv8. The system employs an iterative active learning mechanism that reduces manual labeling effort by 70-80%.</li>
+                <li><strong>DOI:</strong> <a href="Images_and_Videos/research_paper/IRJMETS70400172416.pdf" target="_blank">10.56726/IRJMETS73213</a></li>
+                <li><a href="Images_and_Videos/research_paper/IRJMETS70400172416.pdf" target="_blank" style="color:var(--accent)">Read Paper »</a></li>
               </ul>
             </div>
 
@@ -218,7 +503,7 @@
               <ul>
                 <li>Delivered a hands-on practical session on Computer Vision.</li>
                 <li>Addressed student queries regarding image processing pipelines and real-time detection.</li>
-                <li><a href="https://www.instagram.com/reel/Ch3utbZj038/"><b>Watch Video Highlight</b></a></li>
+                <li><a href="https://www.instagram.com/reel/Ch3utbZj038/" target="_blank"><b>Watch Video Highlight</b></a></li>
               </ul>
             </div>
 
@@ -228,7 +513,6 @@
               <h5>2023 - 2025</h5>
               <p><em>Pratibha College of Commerce & Computer Studies, SPPU, Pune</em></p>
             </div>
-
             <div class="resume-item">
               <h4>Bachelor of Computer Science</h4>
               <h5>2020 - 2023</h5>
@@ -239,195 +523,422 @@
         </div>
       </div>
     </section>
-    <section id="services" class="services section-bg">
+
+    <section id="projects" class="services">
       <div class="container">
 
         <div class="section-title">
           <h2>Projects</h2>
-          <p>Hands-on implementation
-          </p>
+          <p>Hands-on implementation of robust systems for the physical world.</p>
         </div>
 
         <div class="row">
 
-          <style>
-            /* Retaining your custom styles */
-            a:link,
-            a:visited {
-              color: rgb(0, 0, 0);
-              text-decoration: none;
-            }
 
-            a:hover {
-              color: rgb(8, 35, 93);
-              text-decoration: underline;
-            }
 
-            .blink {
-              animation: blinker 1.5s linear infinite;
-              font-family: sans-serif;
-            }
 
-            @keyframes blinker {
-              60% {
-                opacity: 0
-              }
-            }
-          </style>
 
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <h4 class="title"><a href="Web_pages/MuksRobotics.html">MuksRobotics Work</a></h4>
-            <p class="description">
-              <a href="Web_pages/MuksRobotics.html">
-                <b class="blink">CLICK HERE...</b>
-                <img style="border:5px double black;" width="100%" src="Images_and_Videos/MuksRobotics/home_muks.jpg"
-                  alt="MuksRobotics">
-              </a>
-            </p>
+
+
+
+
+<div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <a href="Web_pages/MuksRobotics.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/MuksRobotics/home_muks.jpg" alt="MuksRobotics">
+                <div class="project-overlay">
+                  <span class="view-btn">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span>MuksRobotics Work</h4>
+              </div>
+            </a>
           </div>
 
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <h4 class="title"><a href="Web_pages/Autonomous_Navigation.html">Autonomous Navigation</a></h4>
-            <p class="description">
-              <a href="Web_pages/Autonomous_Navigation.html">
-                <b class="blink">CLICK HERE...</b>
-                <img style="border:5px double black;" width="100%"
-                  src="Images_and_Videos/Autonomous_Navigation/Autonomous_Navigation_home.png" alt="Nav2 Project">
-              </a>
-            </p>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <a href="Web_pages/Autonomous_Navigation.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/Autonomous_Navigation/Autonomous_Navigation_home.png" alt="Nav2">
+                <div class="project-overlay">
+                  <span class="view-btn">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span>Autonomous Navigation</h4>
+              </div>
+            </a>
           </div>
 
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <h4 class="title"><a href="Web_pages/ROS_2_Debugging_&_Monitoring_Application.html">ROS 2 Debugging App</a>
-            </h4>
-            <p class="description">
-              <a href="Web_pages/ROS_2_Debugging_&_Monitoring_Application.html">
-                <b class="blink">CLICK HERE...</b>
-                <img style="border:5px double black;" width="100%"
-                  src="Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Performance_power.png" alt="ROS2 App">
-              </a>
-            <h6 class="text-end"><i>Dec 2025</i></h6>
-            </p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <h4 class="title"><a href="Web_pages/AI_Assistance_Annotation_App.html">AI Annotation App</a></h4>
-            <p class="description">
-              <a href="Web_pages/AI_Assistance_Annotation_App.html">
-                <b class="blink">CLICK HERE...</b>
-                <img style="border:5px double black;" width="100%"
-                  src="Images_and_Videos/AI_Assistance_Annotation_App/home.png" alt="Annotation App">
-              </a>
-            <h6 class="text-end"><i>June 2025</i></h6>
-            </p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <h4 class="title"><a href="Web_pages/Sarthi.html">Virtual Assistant (Sarthi)</a></h4>
-            <p class="description">
-              <a href="Web_pages/Sarthi.html">
-                <b class="blink">CLICK HERE...</b>
-                <img style="border:5px double black;" width="100%" src="Images_and_Videos/main/project's/Sarthi.jpg"
-                  alt="Sarthi">
-              </a>
-            <h6 class="text-end"><i>Jan 2024</i></h6>
-            </p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <h4 class="title"><a href="Web_pages/Flappy_Bird.html">AI Flappy Bird</a></h4>
-            <p class="description">
-              <a href="Web_pages/Flappy_Bird.html">
-                <b class="blink">CLICK HERE...</b>
-                <img style="border:5px double black;" width="100%"
-                  src="Images_and_Videos/main/project's/Flappy Bird.png" alt="Flappy Bird">
-              </a>
-            <h6 class="text-end"><i>Mar 2024</i></h6>
-            </p>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <a href="Web_pages/reinforcement_learning.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/RL/reinforcement_learning.png" alt="ROS2 App">
+                <div class="project-overlay">
+                  <span class="view-btn">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span>Reinforcement Learning</h4>
+                <div class="date">Dec 2025</div>
+              </div>
+            </a>
           </div>
 
 
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <h4 class="title"><a href="Web_pages/FingerMouse.html">AI Mouse Pointer</a></h4>
-            <p class="description">
-              <a href="Web_pages/FingerMouse.html">
-                <b class="blink">CLICK HERE...</b>
-                <img style="border:5px double black;" width="100%" src="Images_and_Videos/main/project's//AI_mouse.png"
-                  alt="AI Mouse">
-              </a>
-            <h6 class="text-end"><i>Mar 2022</i></h6>
-            </p>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <a href="Web_pages/ROS_2_Debugging_&_Monitoring_Application.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Performance_power.png" alt="ROS2 App">
+                <div class="project-overlay">
+                  <span class="view-btn">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span>ROS 2 Debugging App</h4>
+                <div class="date">Dec 2025</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <a href="Web_pages/AI_Assistance_Annotation_App.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/AI_Assistance_Annotation_App/home.png" alt="Annotation App">
+                <div class="project-overlay">
+                  <span class="view-btn">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span>AI Annotation App</h4>
+                <div class="date">June 2025</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <a href="Web_pages/Sarthi.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/main/project's/Sarthi.jpg" alt="Sarthi">
+                <div class="project-overlay">
+                  <span class="view-btn">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span>Virtual Assistant (Sarthi)</h4>
+                <div class="date">Jan 2024</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <a href="Web_pages/Flappy_Bird.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/main/project's/Flappy Bird.png" alt="Flappy Bird">
+                <div class="project-overlay">
+                  <span class="view-btn">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span>AI Flappy Bird</h4>
+                <div class="date">Mar 2024</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <a href="Web_pages/FingerMouse.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/main/project's//AI_mouse.png" alt="AI Mouse">
+                <div class="project-overlay">
+                  <span class="view-btn">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span>AI Mouse Pointer</h4>
+                <div class="date">Mar 2022</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <a href="Web_pages/Robotic Arm.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/main/project's/IMG_20230416_213235.jpg" alt="Robotic Arm">
+                <div class="project-overlay">
+                  <span class="view-btn">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span>Robotic Arm</h4>
+                <div class="date">Apr 2023</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <a href="Web_pages/Piyano.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/main/project's/Screenshot (4).png" alt="Piano Automation">
+                <div class="project-overlay">
+                  <span class="view-btn">View Details</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span>Automate Piano Game</h4>
+                <div class="date">Dec 2021</div>
+              </div>
+            </a>
           </div>
 
 
 
 
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <h4 class="title"><a href="Web_pages/Robotic Arm.html">Robotic Arm</a></h4>
-            <p class="description">
-              <a href="Web_pages/Robotic Arm.html">
-                <b class="blink">CLICK HERE...</b>
-                <img style="border:5px double black;" width="100%"
-                  src="Images_and_Videos/main/project's/IMG_20230416_213235.jpg" alt="Robotic Arm">
-              </a>
-            <h6 class="text-end"><i>Apr 2023</i></h6>
-            </p>
-          </div>
 
 
 
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <h4 class="title"><a href="Web_pages/Piyano.html">Automate Piano Game</a></h4>
-            <p class="description">
-              <a href="Web_pages/Piyano.html">
-                <b class="blink">CLICK HERE...</b>
-                <img style="border:5px double black;" width="100%"
-                  src="Images_and_Videos/main/project's/Screenshot (4).png" alt="Piano Automation">
-              </a>
-              <h6 class="text-end"><i>Dec-2021</i></h6>
 
-            </p>
-          </div>
+
 
         </div>
       </div>
     </section>
+
     <section id="contact" class="contact section-bg">
       <div class="container">
         <div class="section-title">
           <h2>Contact</h2>
+          <p>Let's connect and build something amazing together.</p>
         </div>
         <div class="row" data-aos="fade-in">
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Pune, Maharashtra, India</p>
-              </div>
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>chetanparihar.work@gmail.com</p>
-              </div>
+          
+          <div class="col-lg-4 d-flex align-items-stretch mb-4 mb-lg-0">
+            <div class="info-box">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Location</h3>
+              <p>Pune, Maharashtra, India</p>
             </div>
           </div>
+
+          <div class="col-lg-4 d-flex align-items-stretch mb-4 mb-lg-0">
+            <div class="info-box">
+              <i class="bi bi-envelope"></i>
+              <h3>Email Me</h3>
+              <p><a href="mailto:chetanparihar.work@gmail.com">chetanparihar.work@gmail.com</a></p>
+            </div>
+          </div>
+
+
         </div>
       </div>
-    </section><a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
-  </main>
-  <script src="Extra_files/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="Extra_files/vendor/aos/aos.js"></script>
-  <script src="Extra_files/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="Extra_files/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="Extra_files/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="Extra_files/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="Extra_files/vendor/typed.js/typed.umd.js"></script>
-  <script src="Extra_files/vendor/waypoints/noframework.waypoints.js"></script>
+    </section>
 
-  <script src="Extra_files/js/main.js"></script>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/purecounterjs@1.0.1/dist/purecounter_vanilla.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
+
+  <script>
+    (function() {
+      "use strict";
+
+      // 1. Initialize Animation on Scroll (AOS)
+      function aos_init() {
+        AOS.init({
+          duration: 1000,
+          easing: "ease-in-out",
+          once: true,
+          mirror: false
+        });
+      }
+      window.addEventListener('load', () => {
+        aos_init();
+      });
+
+      // 2. Navbar Active State Management
+      const navbarlinks = document.querySelectorAll('#navbar .scrollto');
+      const navbarlinksActive = () => {
+        let position = window.scrollY + 200;
+        navbarlinks.forEach(navbarlink => {
+          if (!navbarlink.hash) return;
+          let section = document.querySelector(navbarlink.hash);
+          if (!section) return;
+          if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+            navbarlink.classList.add('active');
+          } else {
+            navbarlink.classList.remove('active');
+          }
+        })
+      }
+      window.addEventListener('load', navbarlinksActive);
+      document.addEventListener('scroll', navbarlinksActive);
+
+      // 3. Mobile Nav Toggle
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', function(e) {
+          document.body.classList.toggle('mobile-nav-active');
+          this.classList.toggle('bi-list');
+          this.classList.toggle('bi-x');
+        });
+      }
+
+      /* FIX: Auto-close Sidebar on click outside */
+      document.addEventListener('click', function(e) {
+          const container = document.querySelector('#header');
+          const toggleBtn = document.querySelector('.mobile-nav-toggle');
+          
+          // Only if menu is open
+          if (document.body.classList.contains('mobile-nav-active')) {
+             // If click is NOT inside header AND NOT on the toggle button
+             if (!container.contains(e.target) && !toggleBtn.contains(e.target)) {
+                 document.body.classList.remove('mobile-nav-active');
+                 toggleBtn.classList.remove('bi-x');
+                 toggleBtn.classList.add('bi-list');
+             }
+          }
+      });
+
+      // 4. Typing Effect
+      const typed = document.querySelector('.typed');
+      if (typed) {
+        let typed_strings = typed.getAttribute('data-typed-items');
+        typed_strings = typed_strings.split(',');
+        new Typed('.typed', {
+          strings: typed_strings,
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000
+        });
+      }
+
+      /* * 5. IMPROVED BACKGROUND ANIMATION (Dynamic Constellation)
+       * FIXED: Now strictly uses window.innerWidth/Height to handle Zoom/Resize.
+       */
+      const canvas = document.getElementById("hero-canvas");
+      const ctx = canvas.getContext("2d");
+      
+      let width, height;
+      let particles = [];
+      
+      // Configuration
+      const particleCount = 90; 
+      const connectionDistance = 160; 
+      const mouseDistance = 180; 
+      
+      function resize() {
+        // STRICT FIX: Always use window dimensions to cover entire viewport
+        width = window.innerWidth;
+        height = window.innerHeight;
+        
+        canvas.width = width;
+        canvas.height = height;
+      }
+      
+      window.addEventListener("resize", resize);
+      resize(); // Call immediately
+      
+      const mouse = { x: null, y: null };
+      window.addEventListener("mousemove", (e) => {
+        mouse.x = e.x;
+        mouse.y = e.y;
+      });
+      window.addEventListener("mouseout", () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 2.5; 
+          this.vy = (Math.random() - 0.5) * 2.5; 
+          this.size = Math.random() * 2 + 1.5;
+          this.color = `rgba(0, 225, 255, ${Math.random() * 0.5 + 0.3})`; 
+        }
+        
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          
+          // Bounce off walls (Use dynamic width/height)
+          if (this.x < 0 || this.x > width) this.vx = -this.vx;
+          if (this.y < 0 || this.y > height) this.vy = -this.vy;
+          
+          // Mouse Interaction
+          if (mouse.x != null) {
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx*dx + dy*dy);
+            
+            if (distance < mouseDistance) {
+               const forceDirectionX = dx / distance;
+               const forceDirectionY = dy / distance;
+               const force = (mouseDistance - distance) / mouseDistance;
+               const directionX = forceDirectionX * force * 3;
+               const directionY = forceDirectionY * force * 3;
+               
+               this.x -= directionX;
+               this.y -= directionY;
+            }
+          }
+        }
+        
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        }
+      }
+      
+      // Init particles
+      function initParticles() {
+        particles = [];
+        for(let i=0; i<particleCount; i++) {
+            particles.push(new Particle());
+        }
+      }
+      initParticles();
+      
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        
+        for(let i=0; i<particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+          
+          // Draw connections
+          for(let j=i; j<particles.length; j++) {
+            let dx = particles[i].x - particles[j].x;
+            let dy = particles[i].y - particles[j].y;
+            let distance = Math.sqrt(dx*dx + dy*dy);
+            
+            if (distance < connectionDistance) {
+              ctx.beginPath();
+              let opacity = 1 - (distance/connectionDistance);
+              ctx.strokeStyle = `rgba(99, 102, 241, ${opacity * 0.6})`; 
+              ctx.lineWidth = 1;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+    })();
+  </script>
 
 </body>
-
 </html>

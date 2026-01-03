@@ -11,7 +11,8 @@
 
   <link href="../Images_and_Videos/main/C Symbol.png" rel="icon">
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link href="../Extra_files/vendor/aos/aos.css" rel="stylesheet">
   <link href="../Extra_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,33 +20,10 @@
   <link href="../Extra_files/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="../Extra_files/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="../Extra_files/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../Extra_files/css/theme.css" rel="stylesheet">
 
-  <link href="../Extra_files/css/style.css" rel="stylesheet">
 
-  <style>
-    .project-card {
-      background: #fff;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      margin-bottom: 30px;
-      padding: 20px;
-      transition: transform 0.3s ease;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-    .badge-tech {
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-right: 5px;
-    }
-    /* Sticky Sidebar configuration */
-    .sticky-content {
-      position: sticky;
-      top: 100px; /* Adjust based on your header height */
-    }
-  </style>
+
 </head>
 
 <body>
@@ -56,32 +34,41 @@
     if(audio) audio.volume = 0.5;
   </script>
 
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <i class="bi bi-list mobile-nav-toggle-fix d-xl-none"></i>
 
-  <header id="header">
+<header id="header">
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="../Images_and_Videos/main/Profile.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Chetan Parihar</a></h1>
+        <img src="../Images_and_Videos/main/Profile.jpg" alt="Chetan Parihar" class="img-fluid rounded-circle" style="margin: 15px auto; display: block; width: 120px; border: 2px solid var(--accent); box-shadow: 0 0 20px rgba(0, 225, 255, 0.3);">
+        
+        <h1 class="text-light text-center"><a href="../index.html">Chetan Parihar</a></h1>
+        
         <div class="social-links mt-3 text-center">
           <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/chetan-parihar" class="facebook"><i class="bx bxl-github"></i></a>
+          <a href="https://github.com/chetan-parihar" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.instagram.com/ichetanparihar/" class="instagram"><i class="bx bxl-instagram"></i></a>
         </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="../index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="../index.html#hero" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <br>
           <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i><span>Information</span></a></li>
-          <li><a href="../index.html#services" class="nav-link scrollto"><i class="bx bx-server"></i><span>Projects</span></a></li>
-          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i><span>Contact</span></a></li>
+          <br>
+          <li><a href="../index.html#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Skills</span></a></li>
+          <br>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Experience</span></a></li>
+          <br>
+          <li><a href="../index.html#projects" class="nav-link active"><i class="bx bx-server"></i> <span>Projects</span></a></li>
+          <br>
+          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
       </nav>
     </div>
   </header>
+  
   <main id="main">
 
     <section id="breadcrumbs" class="breadcrumbs">
@@ -89,13 +76,13 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Project Details</h2>
           <ol>
-            <li><a href="../index.html#services">Projects</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
             <li>MuksRobotics</li>
           </ol>
         </div>
       </div>
     </section>
-    <section id="portfolio-details" class="portfolio-details section-bg">
+    <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
         <div class="row gy-4">
@@ -133,52 +120,58 @@
             
             <div class="project-card">
               <h5><i class="bi bi-cpu"></i> ACT on Ro-Arm2 in Ignition Gazebo</h5>
-              <div class="mb-2">
-                <span class="badge bg-secondary badge-tech">Ignition Gazebo</span>
-                <span class="badge bg-secondary badge-tech">Robotic Arm</span>
+              <div class="badge-container mb-3 text-start">
+                <span class="badge badge-tech">Ignition Gazebo</span>
+                <span class="badge badge-tech">Robotic Arm</span>
               </div>
-              <video class="w-100 rounded" height="auto" muted autoplay loop controls>
-                <source src="../Images_and_Videos/MuksRobotics/ACT_ROARM.mp4" type="video/mp4">
-              </video>
+              <div class="d-flex justify-content-center">
+                <video class="rounded" height="auto" width="100%" muted autoplay loop controls>
+                  <source src="../Images_and_Videos/MuksRobotics/ACT_ROARM.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
 
             <div class="project-card">
               <h5><i class="bi bi-geo-alt"></i> Autonomous Navigation on Spaceom Gen3</h5>
-              <div class="mb-2">
-                <span class="badge bg-secondary badge-tech">ROS 2 Nav2</span>
-                <span class="badge bg-secondary badge-tech">SLAM</span>
+              <div class="badge-container mb-3 text-start">
+                <span class="badge badge-tech">ROS 2 Nav2</span>
+                <span class="badge badge-tech">SLAM</span>
               </div>
-              <p class="small text-muted">The video below demonstrates real-time speed navigation.</p>
-              <video class="w-100 rounded" height="auto" muted autoplay loop controls>
-                <source src="../Images_and_Videos/MuksRobotics/spaceom1ge3_nav2.mp4" type="video/mp4">
-              </video>
+              <p class="small text-muted text-start">The video below demonstrates real-time speed navigation.</p>
+              <div class="d-flex justify-content-center">
+                <video class="rounded" height="auto" width="100%" muted autoplay loop controls>
+                  <source src="../Images_and_Videos/MuksRobotics/spaceom1ge3_nav2.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
 
             <div class="project-card">
               <h5><i class="bi bi-hdd-network"></i> Real-time Communication</h5>
-              <div class="mb-2">
-                <span class="badge bg-secondary badge-tech">IoT</span>
-                <span class="badge bg-secondary badge-tech">Manipulator</span>
+              <div class="badge-container mb-3 text-start">
+                <span class="badge badge-tech">IoT</span>
+                <span class="badge badge-tech">Manipulator</span>
               </div>
-              <video class="w-100 rounded" style="max-width: 60%;" height="auto" muted autoplay loop controls>
-                <source src="../Images_and_Videos/MuksRobotics/spaceopro.mp4" type="video/mp4">
-              </video>
+              <div class="d-flex justify-content-center">
+                <video class="rounded" style="max-width: 60%;" height="auto" muted autoplay loop controls>
+                  <source src="../Images_and_Videos/MuksRobotics/spaceopro.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
 
             <div class="project-card">
               <h5><i class="bi bi-arrows-move"></i> Digital Twin Synchronization (MoveIt 2)</h5>
-              <div class="mb-2">
-                <span class="badge bg-secondary badge-tech">MoveIt 2</span>
-                <span class="badge bg-secondary badge-tech">Digital Twin</span>
+              <div class="badge-container mb-3 text-start">
+                <span class="badge badge-tech">MoveIt 2</span>
+                <span class="badge badge-tech">Digital Twin</span>
               </div>
-              <p class="small text-muted">Simultaneous movement of physical and simulated robotic arms.</p>
+              <p class="small text-muted text-start">Simultaneous movement of physical and simulated robotic arms.</p>
               <div class="row">
-                <div class="col-md-6 mb-3 mb-md-0">
+                <div class="col-md-6 mb-3 mb-md-0 d-flex justify-content-center">
                   <video class="w-100 rounded" height="auto" muted autoplay loop controls>
                     <source src="../Images_and_Videos/MuksRobotics/roarm.mp4" type="video/mp4">
                   </video>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 d-flex justify-content-center">
                   <video class="w-100 rounded" height="auto" muted autoplay loop controls>
                     <source src="../Images_and_Videos/MuksRobotics/roarm_moveit_ign_realARM.webm" type="video/mp4">
                   </video>
@@ -188,64 +181,74 @@
 
             <div class="project-card">
               <h5><i class="bi bi-joystick"></i> Reinforcement Learning: Atari Game</h5>
-              <div class="mb-2">
-                <span class="badge bg-secondary badge-tech">RL</span>
-                <span class="badge bg-secondary badge-tech">AI</span>
+              <div class="badge-container mb-3 text-start">
+                <span class="badge badge-tech">RL</span>
+                <span class="badge badge-tech">AI</span>
               </div>
-              <video class="w-100 rounded" height="auto" muted autoplay loop controls>
-                <source src="../Images_and_Videos/MuksRobotics/RL_car.webm" type="video/mp4">
-              </video>
+              <div class="d-flex justify-content-center">
+                <video class="rounded" width="100%" height="auto" muted autoplay loop controls>
+                  <source src="../Images_and_Videos/MuksRobotics/RL_car.webm" type="video/mp4">
+                </video>
+              </div>
             </div>
 
             <div class="project-card">
               <h5><i class="bi bi-shield-check"></i> MuJoCo Collision Avoidance</h5>
-              <div class="mb-2">
-                <span class="badge bg-secondary badge-tech">MuJoCo</span>
-                <span class="badge bg-secondary badge-tech">Physics Sim</span>
+              <div class="badge-container mb-3 text-start">
+                <span class="badge badge-tech">MuJoCo</span>
+                <span class="badge badge-tech">Physics Sim</span>
               </div>
-              <video class="w-100 rounded" height="auto" muted autoplay loop controls>
-                <source src="../Images_and_Videos/MuksRobotics/mujoco.mp4" type="video/mp4">
-              </video>
+              <div class="d-flex justify-content-center">
+                <video class="rounded" width="100%" height="auto" muted autoplay loop controls>
+                  <source src="../Images_and_Videos/MuksRobotics/mujoco.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
 
             <div class="project-card">
               <h5><i class="bi bi-box"></i> SpacePro Env in Ignition Gazebo</h5>
-              <video class="w-100 rounded" height="auto" muted autoplay loop controls>
-                <source src="../Images_and_Videos/MuksRobotics/ign_spaceopro.mp4" type="video/mp4">
-              </video>
+              <div class="d-flex justify-content-center">
+                <video class="rounded" width="100%" height="auto" muted autoplay loop controls>
+                  <source src="../Images_and_Videos/MuksRobotics/ign_spaceopro.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
 
             <div class="project-card">
               <h5><i class="bi bi-robot"></i> Unitree Go2 Stair Climbing</h5>
-              <div class="mb-2">
-                <span class="badge bg-secondary badge-tech">Quadruped</span>
-                <span class="badge bg-secondary badge-tech">Control</span>
+              <div class="badge-container mb-3 text-start">
+                <span class="badge badge-tech">Quadruped</span>
+                <span class="badge badge-tech">Control</span>
               </div>
-              <video class="w-100 rounded" height="auto" muted autoplay loop controls>
-                <source src="../Images_and_Videos/MuksRobotics/go2_robot.mp4" type="video/mp4">
-              </video>
+              <div class="d-flex justify-content-center">
+                <video class="rounded" width="100%" height="auto" muted autoplay loop controls>
+                  <source src="../Images_and_Videos/MuksRobotics/go2_robot.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
 
             <div class="project-card">
               <h5><i class="bi bi-hand-index-thumb"></i> Gesture Control (Spaceom Gen3)</h5>
-              <div class="mb-2">
-                <span class="badge bg-secondary badge-tech">Smooth SDK</span>
-                <span class="badge bg-secondary badge-tech">API</span>
+              <div class="badge-container mb-3 text-start">
+                <span class="badge badge-tech">Smooth SDK</span>
+                <span class="badge badge-tech">API</span>
               </div>
-              <video class="w-100 rounded" style="max-width: 60%;" height="auto" muted autoplay loop controls>
-                <source src="../Images_and_Videos/MuksRobotics/spaceom1_gen3_walk.mp4" type="video/mp4">
-              </video>
+              <div class="d-flex justify-content-center">
+                <video class="rounded" style="max-width: 60%;" height="auto" muted autoplay loop controls>
+                  <source src="../Images_and_Videos/MuksRobotics/spaceom1_gen3_walk.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
 
             <div class="project-card">
               <h5><i class="bi bi-controller"></i> Go1 Gesture Remote Control</h5>
               <div class="row">
-                <div class="col-md-6 mb-3 mb-md-0">
+                <div class="col-md-6 mb-3 mb-md-0 d-flex justify-content-center">
                   <video class="w-100 rounded" height="auto" muted autoplay loop controls>
                     <source src="../Images_and_Videos/MuksRobotics/go1_video1.mp4" type="video/mp4">
                   </video>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 d-flex justify-content-center">
                   <video class="w-100 rounded" height="auto" muted autoplay loop controls>
                     <source src="../Images_and_Videos/MuksRobotics/go1_video2.mp4" type="video/mp4">
                   </video>
@@ -257,6 +260,7 @@
       </div>
     </section>
     </main>
+  
   <a href="../Web_pages/Autonomous_Navigation.html#scrollhere" class="back-to-top d-flex align-items-center justify-content-center">
     <i class="bi bi-arrow-right-short"></i>
   </a>
@@ -270,8 +274,10 @@
   <script src="../Extra_files/vendor/typed.js/typed.umd.js"></script>
   <script src="../Extra_files/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="../Extra_files/vendor/php-email-form/validate.js"></script>
-
+  <script src="../Extra_files/js/layout.js"></script>
   <script src="../Extra_files/js/main.js"></script>
+  
+
 
 </body>
 </html>
