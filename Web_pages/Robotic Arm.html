@@ -21,152 +21,8 @@
   <link href="../Extra_files/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="../Extra_files/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <style>
-    /* --- VIBRANT TECH THEME INTEGRATION --- */
-    :root {
-      --bg-color: #020617; 
-      --card-bg: rgba(30, 41, 59, 0.6); 
-      --text-main: #f8fafc;
-      --text-muted: #cbd5e1;
-      --accent: #00e1ff; /* Electric Cyan */
-      --accent-secondary: #6366f1; /* Indigo */
-    }
+    <link href="../Extra_files/css/theme.css" rel="stylesheet">
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* Background Gradient Mesh */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
-                  radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.15), transparent 25%);
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* Typography */
-    h1, h2, h3, h4, h5, h6 { 
-      font-family: 'Exo 2', sans-serif; 
-      color: #fff; 
-      font-weight: 700; 
-    }
-
-    a { color: var(--accent); text-decoration: none; transition: 0.3s; }
-    a:hover { color: #fff; text-shadow: 0 0 10px var(--accent); }
-
-    /* --- SIDEBAR & LAYOUT --- */
-    #header {
-      position: fixed; top: 0; left: 0; bottom: 0; width: 300px;
-      transition: all 0.5s; z-index: 9997; overflow-y: auto;
-      padding: 0 15px; background: rgba(2, 6, 23, 0.95);
-      border-right: 1px solid rgba(255,255,255,0.05);
-    }
-
-    #main { margin-left: 300px; transition: margin-left 0.5s; }
-
-    .profile h1 a { color: #fff; text-decoration: none; }
-    .nav-menu a { color: var(--text-muted); }
-    .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus { color: var(--accent); }
-
-    .mobile-nav-toggle-fix { 
-        position: fixed; right: 15px; top: 15px; z-index: 9999;
-        border: 0; font-size: 24px; transition: all 0.4s; outline: none !important;
-        background-color: var(--accent); color: #020617;
-        width: 40px; height: 40px; display: inline-flex;
-        align-items: center; justify-content: center;
-        line-height: 0; border-radius: 50%; cursor: pointer; 
-    }
-
-    @media (max-width: 1199px) {
-        #header { left: -300px; }
-        #main { margin-left: 0; }
-        body.mobile-nav-active #header { left: 0; }
-        body.mobile-nav-active::before {
-            content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.6); z-index: 9996;
-        }
-    }
-
-    /* --- PROJECT CARD STYLES --- */
-    .project-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      margin-bottom: 30px;
-      padding: 25px;
-      transition: transform 0.3s ease;
-      color: var(--text-main);
-    }
-    .project-card:hover {
-        border-color: var(--accent);
-        transform: translateY(-5px);
-        box-shadow: 0 10px 40px -10px rgba(0, 225, 255, 0.15);
-    }
-
-    /* Breadcrumbs */
-    .breadcrumbs { padding: 20px 0; background: rgba(15, 23, 42, 0.8); border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 40px; }
-    .breadcrumbs h2 { font-size: 26px; font-weight: 300; margin: 0; }
-    .breadcrumbs ol { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; font-size: 15px; }
-    .breadcrumbs ol li + li { padding-left: 10px; }
-    .breadcrumbs ol li + li::before { display: inline-block; padding-right: 10px; color: var(--text-muted); content: "/"; }
-
-    /* Tech Badges */
-    .badge-tech {
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-right: 5px;
-      margin-bottom: 5px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      background: rgba(99, 102, 241, 0.2);
-      color: #fff;
-      border: 1px solid rgba(99, 102, 241, 0.5);
-      display: inline-block;
-    }
-
-    .sticky-sidebar { position: sticky; top: 20px; z-index: 10; }
-    
-    /* Images & Slider */
-    .portfolio-details-slider .swiper-slide img { width: 100%; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
-    .swiper-pagination .swiper-pagination-bullet-active { background: var(--accent); }
-
-    /* Video Frame */
-    video {
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      background: #000;
-      margin-bottom: 15px;
-    }
-
-    /* Back to Top */
-    .back-to-top {
-      position: fixed; visibility: hidden; opacity: 0; right: 15px; bottom: 15px;
-      z-index: 996; background: var(--accent); width: 40px; height: 40px;
-      border-radius: 4px; transition: all 0.4s;
-    }
-    .back-to-top i { font-size: 28px; color: #020617; line-height: 0; }
-    .back-to-top:hover { background: var(--accent-secondary); color: #fff; }
-    .back-to-top.active { visibility: visible; opacity: 1; }
-
-    /* Alert Box for Status */
-    .alert-status {
-        background: rgba(255, 99, 71, 0.1);
-        border-left: 4px solid #ff6347;
-        padding: 15px;
-        border-radius: 4px;
-        margin-top: 20px;
-    }
-
-  </style>
 </head>
 
 <body>
@@ -276,26 +132,29 @@
               
               <div class="row">
                 <div class="col-12 mb-3">
-                  <p class="text-muted small mb-1">Testing Arm Movement</p>
+                  <p class=" small mb-1">Testing Arm Movement</p>
                   <video width="100%" height="auto" muted autoplay loop controls>
                     <source src="../Images_and_Videos/Robotic Arm/video_20230414_120217.mp4" type="video/mp4">
                   </video>
                 </div>
                 
                 <div class="col-md-6 mb-3">
-                  <p class="text-muted small mb-1">Pick & Place Logic</p>
-                  <video width="100%" height="auto" muted autoplay loop controls>
+                  <p class=" small mb-1">Pick & Place Logic</p>
+                  <video width="100%" height="100%" muted autoplay loop controls>
                     <source src="../Images_and_Videos/Robotic Arm/video_20230416_215751.mp4" type="video/mp4">
                   </video>
                 </div>
-
+<br>
                 <div class="col-md-6 mb-3">
-                  <p class="text-muted small mb-1">Navigation Test</p>
-                  <video width="100%" height="auto" muted autoplay loop controls>
+                  <p class=" small mb-1">Navigation Test</p>
+                  <video width="100%" height="100%" muted autoplay loop controls>
                     <source src="../Images_and_Videos/Robotic Arm/video_20230707_165227.mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
+
+              
+
             </div>
 
           </div>
@@ -319,50 +178,9 @@
   <script src="../Extra_files/vendor/typed.js/typed.umd.js"></script>
   <script src="../Extra_files/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="../Extra_files/vendor/php-email-form/validate.js"></script>
-
   <script src="../Extra_files/js/main.js"></script>
+  <script src="../Extra_files/js/layout.js"></script>
 
-  <script>
-    (function() {
-      "use strict";
-      
-      const mobileNavToggle = document.querySelector('.mobile-nav-toggle-fix');
-      
-      if (mobileNavToggle) {
-        mobileNavToggle.addEventListener('click', function(e) {
-            document.body.classList.toggle('mobile-nav-active');
-            this.classList.toggle('bi-list');
-            this.classList.toggle('bi-x');
-        });
-      }
-
-      document.addEventListener('click', function(e) {
-          if (document.body.classList.contains('mobile-nav-active')) {
-              const header = document.querySelector('#header');
-              const toggle = document.querySelector('.mobile-nav-toggle-fix');
-              
-              if (!header.contains(e.target) && !toggle.contains(e.target)) {
-                  document.body.classList.remove('mobile-nav-active');
-                  toggle.classList.remove('bi-x');
-                  toggle.classList.add('bi-list');
-              }
-          }
-      });
-      
-      const backToTop = document.querySelector('.back-to-top');
-      if (backToTop) {
-        const toggleBacktotop = () => {
-          if (window.scrollY > 100) {
-            backToTop.classList.add('active')
-          } else {
-            backToTop.classList.remove('active')
-          }
-        }
-        window.addEventListener('load', toggleBacktotop);
-        document.addEventListener('scroll', toggleBacktotop);
-      }
-    })();
-  </script>
 
 </body>
 </html>
