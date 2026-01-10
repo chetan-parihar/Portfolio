@@ -9,7 +9,7 @@
   <meta content="A collection of mini-projects and learning experiments in Robotics and Computer Vision." name="description">
   <meta content="Arduino, OpenCV, Robotics, Learning, Experiments" name="keywords">
 
-  <link href="../Images_and_Videos/main/C Symbol.png" rel="icon">
+  <link href="../Images_and_Videos/main/C_Symbol.webp" rel="icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -23,17 +23,18 @@
 
   <link href="../Extra_files/css/theme.css" rel="stylesheet">
 
-
-
 </head>
 
 <body>
 
-  <audio id="myaudio" src="../Audio/BG Music2.mp3" autoplay loop hidden></audio>
+  <audio id="myaudio" loop controls preload="none" style="display: none;"> 
+    <source src="../Audio/BG Music2.mp3" type="audio/mpeg">
+  </audio>
 
   <script>
     var audio = document.getElementById("myaudio");
     if(audio) audio.volume = 0.5;
+    // Note: Autoplay is often blocked by browsers without interaction
   </script>
   
   <i class="bi bi-list mobile-nav-toggle-fix d-xl-none"></i>
@@ -42,7 +43,7 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="../Images_and_Videos/main/Profile.jpg" alt="Chetan Parihar" class="img-fluid rounded-circle" style="margin: 15px auto; display: block; width: 120px; border: 2px solid var(--accent); box-shadow: 0 0 20px rgba(0, 225, 255, 0.3);">
+        <img src="../Images_and_Videos/main/Profile.webp" alt="Chetan Parihar" class="img-fluid rounded-circle" style="margin: 15px auto; display: block; width: 120px; border: 2px solid var(--accent); box-shadow: 0 0 20px rgba(0, 225, 255, 0.3);" fetchpriority="high">
         
         <h1 class="text-light text-center"><a href="../index.html">Chetan Parihar</a></h1>
         
@@ -95,12 +96,12 @@
               
               <div class="portfolio-details-slider swiper mb-4">
                 <div class="swiper-wrapper align-items-center">
-                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/IMG_20210725_013348.jpg" alt=""></div>
-                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/IMG_20220531_020456.jpg" alt=""></div>
-                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/IMG-20210824-WA0009.jpeg" alt=""></div>
-                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/Screenshot (76).png" alt=""></div>
-                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/IMG_20220426_195241.jpg" alt=""></div>
-                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/IMG_20210618_183750.jpg" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/IMG_20210725_013348.webp" loading="lazy" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/IMG_20220531_020456.webp" loading="lazy" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/IMG-20210824-WA0009.webp" loading="lazy" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/Screenshot (76).webp" loading="lazy" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/IMG_20220426_195241.webp" loading="lazy" alt=""></div>
+                  <div class="slideshow swiper-slide"><img src="../Images_and_Videos/Few_More_To_know/IMG_20210618_183750.webp" loading="lazy" alt=""></div>
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
@@ -129,17 +130,17 @@
               <h5>Bluetooth Controlled Car</h5>
               <p class=" small">An Arduino-based vehicle controlled via a mobile app. Capable of movement and LED control.</p>
               <div class="ratio ratio-16x9">
-
-              <iframe 
-    width="100%" 
-    height="100%" 
-    src="https://www.youtube-nocookie.com/embed/Dpw9WWPy8ow?start=5&autoplay=1&mute=1&loop=1&playlist=Dpw9WWPy8ow" 
-    title="Bluetooth Car" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen>
-</iframe>
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube-nocookie.com/embed/Dpw9WWPy8ow?start=5&autoplay=1&mute=1&loop=1&playlist=Dpw9WWPy8ow" 
+                  title="Bluetooth Car" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  loading="lazy"
+                  allowfullscreen>
+                </iframe>
               </div>
             </div>
 
@@ -148,19 +149,17 @@
               <h5>OpenCV Angle Finder</h5>
               <p class=" small">Finding angles on an image using basic Computer Vision and Trigonometry.</p>
               <div class="ratio ratio-16x9">
-
-
-<iframe 
-    width="100%" 
-    height="100%" 
-    src="https://www.youtube.com/embed/TztjjGP0Aws?autoplay=1&mute=1&loop=1&playlist=TztjjGP0Aws" 
-    title="Angle Finder" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen>
-</iframe>
-              
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/TztjjGP0Aws?autoplay=1&mute=1&loop=1&playlist=TztjjGP0Aws" 
+                  title="Angle Finder" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  loading="lazy"
+                  allowfullscreen>
+                </iframe>
               </div>
             </div>
 
@@ -168,8 +167,12 @@
               <span class="year-badge">2021</span>
               <h5>Obstacle Avoidance Bot</h5>
               <p class=" small">A classic Arduino project. Uses an Ultrasonic sensor to detect obstacles and change path.</p>
-              <video width="100%" height="auto" muted autoplay loop controls>
-                <source src="../Images_and_Videos/Few_More_To_know/video_20210725_013717.mp4" type="video/mp4">
+              <video 
+                width="100%" height="auto" 
+                muted autoplay loop controls playsinline 
+                preload="none" loading="lazy" 
+                poster="../Images_and_Videos/Few_More_To_know/video_20210725_013717_poster.jpg">
+                <source src="../Images_and_Videos/Few_More_To_know/video_20210725_013717.webm" type="video/webm">
               </video>
             </div>
 
@@ -177,8 +180,12 @@
               <span class="year-badge">2021</span>
               <h5>IR Sensor Basics</h5>
               <p class=" small">Experimenting with Infrared Sensors for line detection.</p>
-              <video width="100%" height="100%" muted autoplay loop controls>
-                <source src="../Images_and_Videos/Few_More_To_know/video_20210619_183111.mp4" type="video/mp4">
+              <video 
+                width="100%" height="100%" 
+                muted autoplay loop controls playsinline 
+                preload="none" loading="lazy" 
+                poster="../Images_and_Videos/Few_More_To_know/video_20210619_183111_poster.jpg">
+                <source src="../Images_and_Videos/Few_More_To_know/video_20210619_183111.webm" type="video/webm">
               </video>
             </div>
 
@@ -186,8 +193,12 @@
               <span class="year-badge">2021</span>
               <h5>Calibration Issues</h5>
               <p class=" small">Attempting to make a bot move straight. A lesson in motor calibration and physics.</p>
-              <video width="100%" height="auto" muted autoplay loop controls>
-                <source src="../Images_and_Videos/Few_More_To_know/video_20210627_231149.mp4" type="video/mp4">
+              <video 
+                width="100%" height="auto" 
+                muted autoplay loop controls playsinline 
+                preload="none" loading="lazy" 
+                poster="../Images_and_Videos/Few_More_To_know/video_20210627_231149_poster.jpg">
+                <source src="../Images_and_Videos/Few_More_To_know/video_20210627_231149.webm" type="video/webm">
               </video>
             </div>
 
@@ -197,13 +208,21 @@
               <p class=" small">Initial attempts at automating games using vision.</p>
               <div class="row">
                 <div class="col-md-6 mb-2">
-                  <video width="100%" height="100%" muted autoplay loop controls>
-                    <source src="../Images_and_Videos/Few_More_To_know/video_20220531_032000.mp4" type="video/mp4">
+                  <video 
+                    width="100%" height="100%" 
+                    muted autoplay loop controls playsinline 
+                    preload="none" loading="lazy" 
+                    poster="../Images_and_Videos/Few_More_To_know/video_20220531_032000_poster.jpg">
+                    <source src="../Images_and_Videos/Few_More_To_know/video_20220531_032000.webm" type="video/webm">
                   </video>
                 </div>
                 <div class="col-md-6 mb-2">
-                  <video width="100%" height="100%" muted autoplay loop controls>
-                    <source src="../Images_and_Videos/Few_More_To_know/video_20220501_162422.mp4" type="video/mp4">
+                  <video 
+                    width="100%" height="100%" 
+                    muted autoplay loop controls playsinline 
+                    preload="none" loading="lazy" 
+                    poster="../Images_and_Videos/Few_More_To_know/video_20220501_162422_poster.jpg">
+                    <source src="../Images_and_Videos/Few_More_To_know/video_20220501_162422.webm" type="video/webm">
                   </video>
                 </div>
               </div>
@@ -215,13 +234,21 @@
               <p class=" small">Learning to manipulate servo motors for robotic arms.</p>
               <div class="row">
                  <div class="col-md-6 mb-2">
-                    <video width="100%" height="100%" muted autoplay loop controls>
-                        <source src="../Images_and_Videos/Few_More_To_know/Screenrecording_20220426_195507.mp4" type="video/mp4">
+                    <video 
+                      width="100%" height="100%" 
+                      muted autoplay loop controls playsinline 
+                      preload="none" loading="lazy" 
+                      poster="../Images_and_Videos/Few_More_To_know/Screenrecording_20220426_195507_poster.jpg">
+                        <source src="../Images_and_Videos/Few_More_To_know/Screenrecording_20220426_195507.webm" type="video/webm">
                     </video>
                  </div>
                  <div class="col-md-6 mb-2">
-                    <video width="100%" height="100%" muted autoplay loop controls>
-                        <source src="../Images_and_Videos/Few_More_To_know/video_20220427_004552.mp4" type="video/mp4">
+                    <video 
+                      width="100%" height="100%" 
+                      muted autoplay loop controls playsinline 
+                      preload="none" loading="lazy" 
+                      poster="../Images_and_Videos/Few_More_To_know/video_20220427_004552_poster.jpg">
+                        <source src="../Images_and_Videos/Few_More_To_know/video_20220427_004552.webm" type="video/webm">
                     </video>
                  </div>
               </div>
@@ -233,13 +260,22 @@
               <p class=" small">Can you guess what these are?</p>
               <div class="row">
                 <div class="col-md-6 mb-2">
-                  <video width="100%" height="100%" muted autoplay loop controls>
-                    <source src="../Images_and_Videos/Few_More_To_know/video_20210618_202052.mp4" type="video/mp4">
+                  <video 
+                    width="100%" height="100%" 
+                    muted autoplay loop controls playsinline 
+                    preload="none" loading="lazy" 
+                    poster="../Images_and_Videos/Few_More_To_know/video_20210618_202052_poster.jpg">
+                    <source src="../Images_and_Videos/Few_More_To_know/video_20210618_202052.webm" type="video/webm">
                   </video>
                 </div>
                 <div class="col-md-6 mb-2">
-                  <video width="100%" height="100%" muted autoplay loop controls>
-                    <source src="../Images_and_Videos/Few_More_To_know/video_20230707_180707.mp4" type="video/mp4">
+                  <video 
+                    width="100%" height="100%" 
+                    muted autoplay loop controls playsinline 
+                    preload="none" loading="lazy" 
+                    poster="../Images_and_Videos/Few_More_To_know/video_20230707_180707_poster.jpg">
+                    <source src="../Images_and_Videos/Few_More_To_know/video_20230707_180707.webm" type="video/webm">
+
                   </video>
                 </div>
               </div>
@@ -267,10 +303,7 @@
   <script src="../Extra_files/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="../Extra_files/vendor/php-email-form/validate.js"></script>
   <script src="../Extra_files/js/layout.js"></script>
-
   <script src="../Extra_files/js/main.js"></script>
-
-
 
 </body>
 </html>

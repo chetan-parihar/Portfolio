@@ -6,13 +6,17 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Chetan Parihar - Robotics & AI Portfolio</title>
-  <meta content="Portfolio of Chetan Parihar, a Robotics and AI engineer specializing in ROS 2, SLAM, and Computer Vision." name="description">
+  <meta
+    content="Portfolio of Chetan Parihar, a Robotics and AI engineer specializing in ROS 2, SLAM, and Computer Vision."
+    name="description">
   <meta content="Robotics, AI, ROS 2, SLAM, Computer Vision, Portfolio" name="keywords">
 
-  <link href="Images_and_Videos/main/C Symbol.png" rel="icon">
+  <link href="Images_and_Videos/main/C_Symbol.webp" rel="icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -24,14 +28,12 @@
   <style>
     /* --- VIBRANT TECH THEME --- */
     :root {
-      --bg-color: #020617; 
-      --card-bg: rgba(30, 41, 59, 0.6); 
+      --bg-color: #020617;
+      --card-bg: rgba(30, 41, 59, 0.6);
       --text-main: #f8fafc;
       --text-muted: #cbd5e1;
-      
-      /* Vibrant Accents */
-      --accent: #00e1ff; /* Electric Cyan */
-      --accent-secondary: #6366f1; /* Indigo */
+      --accent: #00e1ff;
+      --accent-secondary: #6366f1;
       --gradient-text: linear-gradient(to right, #00e1ff, #6366f1);
     }
 
@@ -44,95 +46,208 @@
       padding: 0;
     }
 
-    /* Scroll Offset for fixed header */
     section {
       scroll-margin-top: 0;
     }
+
     @media(min-width: 1200px) {
-        section { scroll-margin-top: 0; }
+      section {
+        scroll-margin-top: 0;
+      }
     }
 
-    /* Background Gradient Mesh */
     body::before {
       content: "";
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
-                  radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.15), transparent 25%);
+        radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.15), transparent 25%);
       z-index: -1;
       pointer-events: none;
     }
 
-    /* Typography */
-    h1, h2, h3, h4, h5, h6 { 
-      font-family: 'Exo 2', sans-serif; 
-      color: #fff; 
-      font-weight: 700; 
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Exo 2', sans-serif;
+      color: #fff;
+      font-weight: 700;
     }
-    
-    a { color: var(--accent); text-decoration: none; transition: 0.3s; }
-    a:hover { color: #fff; text-shadow: 0 0 10px var(--accent); }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px var(--accent);
+    }
 
     /* Header/Nav */
-    #header { 
-      position: fixed; top: 0; left: 0; bottom: 0; width: 300px;
-      transition: all ease-in-out 0.5s; z-index: 9997; 
-      padding: 0 15px; 
-      background: rgba(2, 6, 23, 0.85); 
-      backdrop-filter: blur(10px); 
-      border-right: 1px solid rgba(255,255,255,0.05); 
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 300px;
+      transition: all ease-in-out 0.5s;
+      z-index: 9997;
+      padding: 0 15px;
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(10px);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
       overflow-y: auto;
-      
-      /* FIX: Custom Scrollbar Styling */
       scrollbar-width: thin;
       scrollbar-color: var(--accent) transparent;
     }
 
-    /* Webkit Scrollbar Styling (Chrome, Edge, Safari) */
     #header::-webkit-scrollbar {
-        width: 6px;
+      width: 6px;
     }
+
     #header::-webkit-scrollbar-track {
-        background: transparent; 
+      background: transparent;
     }
+
     #header::-webkit-scrollbar-thumb {
-        background-color: rgba(0, 225, 255, 0.3);
-        border-radius: 20px;
+      background-color: rgba(0, 225, 255, 0.3);
+      border-radius: 20px;
     }
+
     #header::-webkit-scrollbar-thumb:hover {
-        background-color: var(--accent);
+      background-color: var(--accent);
     }
-    
-    .profile img { 
-      margin: 15px auto; display: block; width: 120px; 
-      border: 2px solid var(--accent); 
-      box-shadow: 0 0 20px rgba(0, 225, 255, 0.3); 
+
+    .profile img {
+      margin: 15px auto;
+      display: block;
+      width: 120px;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 20px rgba(0, 225, 255, 0.3);
     }
-    .profile h1 { font-size: 24px; margin: 0; padding: 0; font-weight: 600; text-align: center; font-family: "Exo 2", sans-serif; }
-    .profile .social-links a { font-size: 18px; display: inline-block; background: rgba(255,255,255,0.05); color: #fff; line-height: 1; padding: 8px 0; margin-right: 4px; border-radius: 50%; text-align: center; width: 36px; height: 36px; transition: 0.3s; }
-    .profile .social-links a:hover { background: var(--accent); color: #020617; text-decoration: none; }
 
-    .nav-menu { padding: 30px 0 0 0; }
-    .nav-menu * { margin: 0; padding: 0; list-style: none; }
-    .nav-menu > ul > li { position: relative; white-space: nowrap; }
-    .nav-menu a, .nav-menu a:focus { display: flex; align-items: center; color: var(--text-muted); padding: 12px 15px; margin-bottom: 8px; transition: 0.3s; font-size: 15px; }
-    .nav-menu a i, .nav-menu a:focus i { font-size: 24px; padding-right: 8px; color: var(--text-muted); }
-    .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus { color: #fff; text-decoration: none; }
-    .nav-menu .active i, .nav-menu a:hover i { color: var(--accent); }
+    .profile h1 {
+      font-size: 24px;
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+      text-align: center;
+      font-family: "Exo 2", sans-serif;
+    }
 
-    .mobile-nav-toggle { position: fixed; right: 15px; top: 15px; z-index: 9998; border: 0; font-size: 24px; transition: all 0.4s; outline: none !important; background-color: var(--accent); color: #020617; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; line-height: 0; border-radius: 50%; cursor: pointer; }
-    .mobile-nav-active #header { left: 0; }
-    
-    /* Main Content Area */
-    #main { margin-left: 300px; }
-    @media (max-width: 1199px) { #header { left: -300px; } #main { margin-left: 0; } }
+    .profile .social-links a {
+      font-size: 18px;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      line-height: 1;
+      padding: 8px 0;
+      margin-right: 4px;
+      border-radius: 50%;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+    }
+
+    .profile .social-links a:hover {
+      background: var(--accent);
+      color: #020617;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      padding: 30px 0 0 0;
+    }
+
+    .nav-menu * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-menu>ul>li {
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .nav-menu a,
+    .nav-menu a:focus {
+      display: flex;
+      align-items: center;
+      color: var(--text-muted);
+      padding: 12px 15px;
+      margin-bottom: 8px;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .nav-menu a i,
+    .nav-menu a:focus i {
+      font-size: 24px;
+      padding-right: 8px;
+      color: var(--text-muted);
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active,
+    .nav-menu .active:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-menu .active i,
+    .nav-menu a:hover i {
+      color: var(--accent);
+    }
+
+    .mobile-nav-toggle {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 9998;
+      border: 0;
+      font-size: 24px;
+      transition: all 0.4s;
+      outline: none !important;
+      background-color: var(--accent);
+      color: #020617;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .mobile-nav-active #header {
+      left: 0;
+    }
+
+    #main {
+      margin-left: 300px;
+    }
+
+    @media (max-width: 1199px) {
+      #header {
+        left: -300px;
+      }
+      #main {
+        margin-left: 0;
+      }
+    }
 
     /* --- ANIMATED HERO SECTION --- */
     #hero {
-      width: 100%; 
-      height: 100vh; 
+      width: 100%;
+      height: 100vh;
       position: relative;
-      background: transparent; 
+      background: transparent;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -140,135 +255,305 @@
       align-items: center;
     }
 
-    /* Canvas needs absolute positioning to sit behind text */
-    #hero-canvas { 
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        z-index: 1; /* Behind content */
-        display: block;
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: block;
     }
 
-    .hero-container { position: relative; z-index: 2; text-align: center; padding: 0 15px; }
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 15px;
+    }
 
-    #hero h1 { 
-      font-size: 60px; line-height: 1; margin-bottom: 15px;
+    #hero h1 {
+      font-size: 60px;
+      line-height: 1;
+      margin-bottom: 15px;
       background: var(--gradient-text);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 0 20px rgba(0, 225, 255, 0.2));
     }
-    @media (max-width: 768px) { #hero h1 { font-size: 40px; } }
 
-    #hero p { font-size: 20px; color: var(--text-muted); max-width: 800px; margin: 0 auto; }
-    #hero p span { color: var(--accent); border-bottom: 2px solid var(--accent-secondary); }
-    
-    /* View My Projects Button */
+    @media (max-width: 768px) {
+      #hero h1 {
+        font-size: 40px;
+      }
+    }
+
+    #hero p {
+      font-size: 20px;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #hero p span {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent-secondary);
+    }
+
     .btn-hero {
-      margin-top: 35px; display: inline-block; padding: 12px 35px;
-      border-radius: 50px; background: rgba(2, 6, 23, 0.5);
-      border: 2px solid var(--accent); color: var(--accent);
-      font-family: 'Exo 2', sans-serif; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase;
+      margin-top: 35px;
+      display: inline-block;
+      padding: 12px 35px;
+      border-radius: 50px;
+      background: rgba(2, 6, 23, 0.5);
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       transition: all 0.3s ease;
       box-shadow: 0 0 15px rgba(0, 225, 255, 0.2);
       cursor: pointer;
     }
+
     .btn-hero:hover {
-      background: var(--accent); color: #020617;
+      background: var(--accent);
+      color: #020617;
       box-shadow: 0 0 30px rgba(0, 225, 255, 0.6);
       transform: translateY(-3px);
       text-decoration: none;
     }
 
-    /* Section Styling */
-    section { padding: 60px 0; overflow: hidden; }
-    .section-title { padding-bottom: 30px; }
-    .section-title h2 { color: #fff; position: relative; display: inline-block; margin-bottom: 15px; font-size: 32px; }
-    .section-title h2::after { content: ''; position: absolute; display: block; width: 100%; height: 3px; background: var(--gradient-text); bottom: -5px; left: 0; }
-    .section-title p { margin-bottom: 0; color: var(--text-muted); }
-    .section-bg { background-color: rgba(15, 23, 42, 0.5); }
-
-    /* About Content */
-    .about-content { font-size: 16px; line-height: 1.8; color: var(--text-muted); }
-    .about-content b { color: var(--accent); }
-
-    /* --- PROJECT CARDS --- */
-    .project-card {
-      background: var(--card-bg); backdrop-filter: blur(10px);
-      border-radius: 16px; overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: all 0.4s ease; height: 100%; position: relative;
+    section {
+      padding: 60px 0;
+      overflow: hidden;
     }
+
+    .section-title {
+      padding-bottom: 30px;
+    }
+
+    .section-title h2 {
+      color: #fff;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 15px;
+      font-size: 32px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--gradient-text);
+      bottom: -5px;
+      left: 0;
+    }
+
+    .section-title p {
+      margin-bottom: 0;
+      color: var(--text-muted);
+    }
+
+    .section-bg {
+      background-color: rgba(15, 23, 42, 0.5);
+    }
+
+    .about-content {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    .about-content b {
+      color: var(--accent);
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+      position: relative;
+    }
+
     .project-card:hover {
       transform: translateY(-10px) scale(1.02);
       border-color: var(--accent);
       box-shadow: 0 10px 40px -10px rgba(0, 225, 255, 0.3);
     }
-    
-    /* FIX: Image Wrapper to Show Full Image */
-    .project-img-wrapper { 
-      position: relative; 
-      height: 200px; 
-      overflow: hidden; 
-      background: #020617; 
+
+    .project-img-wrapper {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: #020617;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .project-img-wrapper img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: contain; 
-      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+
+    .project-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    
-    .project-card:hover .project-img-wrapper img { transform: scale(1.05); }
-    
+
+    .project-card:hover .project-img-wrapper img {
+      transform: scale(1.05);
+    }
+
     .project-overlay {
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: rgba(2, 6, 23, 0.85);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
-    .project-card:hover .project-overlay { opacity: 1; }
-    
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
     .view-btn {
       background: linear-gradient(45deg, var(--accent-secondary), var(--accent));
-      color: #fff; padding: 10px 24px; border-radius: 30px;
-      font-weight: 700; font-family: 'Exo 2', sans-serif;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-family: 'Exo 2', sans-serif;
       box-shadow: 0 4px 15px rgba(0, 225, 255, 0.4);
       text-decoration: none;
     }
-    
-    .project-info { padding: 25px; }
-    .project-info h4 { font-size: 1.2rem; margin-bottom: 5px; }
-    .project-info h4 a { color: #fff; }
-    .project-info h4 a:hover { color: var(--accent); }
-    .project-info .date { font-size: 0.85rem; color: var(--text-muted); font-style: italic; display: block; margin-top: 10px; text-align: right; }
+
+    .project-info {
+      padding: 25px;
+    }
+
+    .project-info h4 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .project-info h4 a {
+      color: #fff;
+    }
+
+    .project-info h4 a:hover {
+      color: var(--accent);
+    }
+
+    .project-info .date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+      display: block;
+      margin-top: 10px;
+      text-align: right;
+    }
 
     /* Resume Timeline */
     .resume .resume-item {
-      padding: 0 0 20px 20px; margin-top: -2px;
+      padding: 0 0 20px 20px;
+      margin-top: -2px;
       border-left: 2px solid var(--accent-secondary);
       position: relative;
     }
-    .resume .resume-item h4 { line-height: 18px; font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 10px; }
-    .resume .resume-item h5 { font-size: 16px; background: rgba(255,255,255,0.1); padding: 5px 15px; display: inline-block; font-weight: 600; margin-bottom: 10px; border-radius: 4px; color: var(--accent); }
-    .resume .resume-item::before { content: ""; position: absolute; width: 16px; height: 16px; border-radius: 50px; left: -9px; top: 0; background: var(--bg-color); border: 2px solid var(--accent); }
-    .resume h3.resume-title { font-size: 26px; font-weight: 700; margin-top: 20px; margin-bottom: 20px; color: var(--accent); }
-    .resume ul { padding-left: 20px; color: var(--text-muted); }
-    .resume ul li { padding-bottom: 10px; }
 
-    /* Skills */
-    .skills-content ul { list-style: none; padding: 0; }
-    .skills-content ul li { padding-bottom: 10px; display: flex; align-items: center; color: var(--text-muted); }
-    .skills-content ul li i { font-size: 20px; padding-right: 10px; color: var(--accent); }
+    .resume .resume-item h4 {
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+    }
 
+    .resume .resume-item h5 {
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 5px 15px;
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      color: var(--accent);
+    }
 
-    /* --- NEW CONTACT SECTION STYLING --- */
+    .resume .resume-item::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50px;
+      left: -9px;
+      top: 0;
+      background: var(--bg-color);
+      border: 2px solid var(--accent);
+    }
+
+    .resume h3.resume-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    .resume ul {
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+
+    .resume ul li {
+      padding-bottom: 10px;
+    }
+
+    /* --- FIXED SKILLS SECTION --- */
+    .skills-content ul { 
+      list-style: none; 
+      padding: 0; 
+    }
+
+    .skills-content ul li { 
+      display: flex; 
+      align-items: flex-start;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    /* The Arrow Icon */
+    .skills-content ul li i { 
+      font-size: 18px; 
+      margin-right: 8px; 
+      color: var(--accent); 
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* The Label (Core, Robotics, etc.) */
+    .skills-content ul li strong {
+      min-width: 90px;
+      margin-right: 10px;
+      display: inline-block;
+      color: #fff;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
     .contact .info-box {
       color: #fff;
       text-align: center;
@@ -276,7 +561,7 @@
       padding: 30px 20px;
       background: var(--card-bg);
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease-in-out;
       width: 100%;
       height: 100%;
@@ -297,7 +582,7 @@
       margin-bottom: 15px;
       display: inline-block;
     }
-    
+
     .contact .info-box h3 {
       font-size: 20px;
       font-weight: 700;
@@ -312,8 +597,14 @@
       margin-bottom: 0;
       color: var(--text-muted);
     }
-    
-    .contact .social-links { margin-top: 15px; display: flex; justify-content: center; gap: 15px; }
+
+    .contact .social-links {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
     .contact .social-links a {
       font-size: 20px;
       display: inline-block;
@@ -327,15 +618,25 @@
       height: 44px;
       transition: 0.3s;
     }
+
     .contact .social-links a:hover {
       background: var(--accent);
       color: #020617;
       box-shadow: 0 0 15px var(--accent);
     }
 
-    .blink { animation: blinker 1.5s linear infinite; font-weight: bold; color: var(--accent); font-size: 0.8rem; text-transform: uppercase; margin-right: 5px; }
-    @keyframes blinker { 50% { opacity: 0; } }
+    .blink {
+      animation: blinker 1.5s linear infinite;
+      font-weight: bold;
+      color: var(--accent);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-right: 5px;
+    }
 
+    @keyframes blinker {
+      50% { opacity: 0; }
+    }
   </style>
 </head>
 
@@ -347,10 +648,11 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="Images_and_Videos/main/Profile.jpg" alt="Chetan Parihar" class="img-fluid rounded-circle">
+        <img src="Images_and_Videos/main/Profile.webp" alt="Chetan Parihar" class="img-fluid rounded-circle" width="120" height="120" fetchpriority="high">
         <h1 class="text-light"><a href="index.html">Chetan Parihar</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i
+              class="bx bxl-linkedin"></i></a>
           <a href="https://github.com/chetan-parihar" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.instagram.com/ichetanparihar/" class="instagram"><i class="bx bxl-instagram"></i></a>
         </div>
@@ -361,7 +663,8 @@
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Skills</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Experience</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Experience</span></a>
+          </li>
           <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Projects</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
           <li><span class="text-muted small ps-3">Last update: Jan 2026</span></li>
@@ -375,8 +678,10 @@
 
     <div class="hero-container" data-aos="fade-in">
       <h1>Chetan Parihar</h1>
-      <p>I am experienced in <span class="typed" data-typed-items="ROS 2, PyTorch, Computer Vision, Reinforcement Learning, LLM, YOLOv8, Python (OOP), C++, Unity"></span></p>
-      
+      <p>I am experienced in <span class="typed"
+          data-typed-items="ROS 2, PyTorch, Computer Vision, Reinforcement Learning, LLM, YOLOv8, Python (OOP), C++, Unity"></span>
+      </p>
+
       <a href="#projects" class="btn-hero scrollto">View Projects <i class="bi bi-arrow-down-short"></i></a>
     </div>
   </section>
@@ -391,11 +696,15 @@
         <div class="row">
           <div class="col-lg-12 about-content">
             <p>
-              <b>A</b>i and Robotics engineer with hands-on experience developing autonomous navigation, SLAM, and simulation-driven robotic systems.
+              <b>A</b>i and Robotics engineer with hands-on experience developing autonomous navigation, SLAM, and
+              simulation-driven robotic systems.
             </p>
             <br>
             <p>
-              Worked on AMR, humanoid, quadruped, and manipulator platforms using ROS 2, LiDAR, depth cameras, and high-fidelity simulation. Experienced in integrating AI models, imitation and reinforcement learning pipelines, and deploying systems from simulation to real-world robots with a strong focus on scalable software architecture.
+              Worked on AMR, humanoid, quadruped, and manipulator platforms using ROS 2, LiDAR, depth cameras, and
+              high-fidelity simulation. Experienced in integrating AI models, imitation and reinforcement learning
+              pipelines, and deploying systems from simulation to real-world robots with a strong focus on scalable
+              software architecture.
             </p>
           </div>
         </div>
@@ -406,19 +715,23 @@
       <div class="container">
         <div class="section-title">
           <h2>Technical Skills</h2>
-          <p>I have proactively pursued self-learning and leveraged various online learning platforms to acquire a diverse set of skills.</p>
+          <p>I have proactively pursued self-learning and leveraged various online learning platforms to acquire a
+            diverse set of skills.</p>
         </div>
         <div class="row skills-content">
           <div class="col-lg-6" data-aos="fade-up">
             <ul>
               <li><i class="bi bi-chevron-right"></i> <strong>Core:</strong> Python (OOP), C++, C</li>
-              <li><i class="bi bi-chevron-right"></i> <strong>Robotics:</strong> ROS 2 (Humble/Jazzy), Nav2, RTAB-MAP, MoveIt 2</li>
-              <li><i class="bi bi-chevron-right"></i> <strong>AI & CV:</strong> PyTorch, YOLOv8, OpenCV, MediaPipe, LLM, huggingface, Reinforcement Learning</li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Robotics:</strong> ROS 2 (Humble/Jazzy), Nav2, RTAB-MAP,
+                MoveIt 2</li>
+              <li><i class="bi bi-chevron-right"></i> <strong>AI & CV:</strong> PyTorch, YOLOv8, OpenCV, MediaPipe, LLM,
+                huggingface, Reinforcement Learning</li>
             </ul>
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-             <ul>
-              <li><i class="bi bi-chevron-right"></i> <strong>Simulation:</strong> Isaac Sim, Isaac Lab, Ignition Gazebo</li>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <strong>Simulation:</strong> Isaac Sim, Isaac Lab, Ignition Gazebo
+              </li>
               <li><i class="bi bi-chevron-right"></i> <strong>Tools:</strong> Git, Linux, AutoCAD (Fusion360)</li>
             </ul>
           </div>
@@ -441,10 +754,19 @@
               <h4>Robotics Engineer</h4>
               <h5>April 2025 – December 2025</h5>
               <ul>
-                <li><strong>Autonomous Navigation Systems:</strong> Developed navigation stacks using 2D LiDAR, 3D LiDAR, and RGB-D cameras across AMR, Humanoid, and Quadruped platforms (Spaceo Pro, SpaceoM1 Gen3, Unitree Go2).</li>
-                <li><strong>Semantic SLAM & VLMs:</strong> Designed Semantic SLAM pipelines by extending classical navigation with Vision-Language Models (VLMs) for object-level environment understanding. Integrated semantic metadata into the navigation stack to support language-guided commands (e.g., “go near the red chair”).</li>
-                <li><strong>Robot SDK Architecture:</strong> Architected a scalable Robot SDK to abstract hardware interfaces, enabling seamless integration between low-level control, AI modules, and high-level software for both Ignition Gazebo simulation and real-robot deployment.</li>
-                <li><strong>High-Performance Compute:</strong> Implemented multi-sensor navigation on Unitree Go2 Air using Unitree 4D L2 LiDAR and Intel RealSense D435i, leveraging <b>RTAB-Map (ROS 2)</b> on NVIDIA Jetson AGX Orin.</li>
+                <li><strong>Autonomous Navigation Systems:</strong> Developed navigation stacks using 2D LiDAR, 3D
+                  LiDAR, and RGB-D cameras across AMR, Humanoid, and Quadruped platforms (Spaceo Pro, SpaceoM1 Gen3,
+                  Unitree Go2).</li>
+                <li><strong>Semantic SLAM & VLMs:</strong> Designed Semantic SLAM pipelines by extending classical
+                  navigation with Vision-Language Models (VLMs) for object-level environment understanding. Integrated
+                  semantic metadata into the navigation stack to support language-guided commands (e.g., “go near the
+                  red chair”).</li>
+                <li><strong>Robot SDK Architecture:</strong> Architected a scalable Robot SDK to abstract hardware
+                  interfaces, enabling seamless integration between low-level control, AI modules, and high-level
+                  software for both Ignition Gazebo simulation and real-robot deployment.</li>
+                <li><strong>High-Performance Compute:</strong> Implemented multi-sensor navigation on Unitree Go2 Air
+                  using Unitree 4D L2 LiDAR and Intel RealSense D435i, leveraging <b>RTAB-Map (ROS 2)</b> on NVIDIA
+                  Jetson AGX Orin.</li>
               </ul>
             </div>
 
@@ -453,10 +775,16 @@
               <h4>AI & Robotics Intern</h4>
               <h5>August 2024 – February 2025</h5>
               <ul>
-                <li><strong>Simulation Environments:</strong> Built reusable workflows in Gazebo Classic and Ignition Gazebo for mobile and manipulator robots. Created high-fidelity environments using Blender assets to evaluate ACT-based manipulation policies.</li>
-                <li><strong>Manipulation & Sim-to-Real:</strong> Integrated MoveIt 2 for the RoArm-M2-S robotic arm. Successfully trained Action Chunking Transformer (ACT) policies in simulation and deployed them to the real robot for validation.</li>
-                <li><strong>Reinforcement Learning:</strong> Gained hands-on experience with control and policy learning workflows using Stable-Baselines3.</li>
-                <li><strong>Quadruped Navigation:</strong> Implemented ROS 2 mapping and localization on the Unitree Go1 robot using Nav2 and Slamtec A2M12 2D LiDAR.</li>
+                <li><strong>Simulation Environments:</strong> Built reusable workflows in Gazebo Classic and Ignition
+                  Gazebo for mobile and manipulator robots. Created high-fidelity environments using Blender assets to
+                  evaluate ACT-based manipulation policies.</li>
+                <li><strong>Manipulation & Sim-to-Real:</strong> Integrated MoveIt 2 for the RoArm-M2-S robotic arm.
+                  Successfully trained Action Chunking Transformer (ACT) policies in simulation and deployed them to the
+                  real robot for validation.</li>
+                <li><strong>Reinforcement Learning:</strong> Gained hands-on experience with control and policy learning
+                  workflows using Stable-Baselines3.</li>
+                <li><strong>Quadruped Navigation:</strong> Implemented ROS 2 mapping and localization on the Unitree Go1
+                  robot using Nav2 and Slamtec A2M12 2D LiDAR.</li>
               </ul>
             </div>
 
@@ -466,8 +794,10 @@
               <h5>April 2024 – May 2024</h5>
               <ul>
                 <li>Developed an AI application focusing on image-based object counting functionality.</li>
-                <li>Implemented <strong>YOLOv8</strong> for accurate object detection and quantification in static images.</li>
-                <li>Integrated the object-counting pipeline into the core application workflow for automated visual analysis.</li>
+                <li>Implemented <strong>YOLOv8</strong> for accurate object detection and quantification in static
+                  images.</li>
+                <li>Integrated the object-counting pipeline into the core application workflow for automated visual
+                  analysis.</li>
               </ul>
             </div>
 
@@ -476,22 +806,26 @@
               <h4>Data Science Intern (Virtual)</h4>
               <h5>March 2023</h5>
               <ul>
-                <li>Gained hands-on experience in data cleaning, preprocessing, and exploratory data analysis (EDA) on real-world datasets.</li>
+                <li>Gained hands-on experience in data cleaning, preprocessing, and exploratory data analysis (EDA) on
+                  real-world datasets.</li>
                 <li>Built and evaluated machine learning models to solve data-driven problems.</li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            
+
             <h3 class="resume-title">Research & Publications</h3>
             <div class="resume-item">
               <h4>AI-Assisted Image Annotation System</h4>
               <h5>Published: April 2025 | IRJMETS</h5>
               <ul>
-                <li><strong>Abstract:</strong> Proposed a semi-automated annotation workflow using YOLOv8. The system employs an iterative active learning mechanism that reduces manual labeling effort by 70-80%.</li>
-                <li><strong>DOI:</strong> <a href="Images_and_Videos/research_paper/IRJMETS70400172416.pdf" target="_blank">10.56726/IRJMETS73213</a></li>
-                <li><a href="Images_and_Videos/research_paper/IRJMETS70400172416.pdf" target="_blank" style="color:var(--accent)">Read Paper »</a></li>
+                <li><strong>Abstract:</strong> Proposed a semi-automated annotation workflow using YOLOv8. The system
+                  employs an iterative active learning mechanism that reduces manual labeling effort by 70-80%.</li>
+                <li><strong>DOI:</strong> <a href="Images_and_Videos/research_paper/IRJMETS70400172416.pdf"
+                    target="_blank">10.56726/IRJMETS73213</a></li>
+                <li><a href="Images_and_Videos/research_paper/IRJMETS70400172416.pdf" target="_blank"
+                    style="color:var(--accent)">Read Paper »</a></li>
               </ul>
             </div>
 
@@ -503,7 +837,8 @@
               <ul>
                 <li>Delivered a hands-on practical session on Computer Vision.</li>
                 <li>Addressed student queries regarding image processing pipelines and real-time detection.</li>
-                <li><a href="https://www.instagram.com/reel/Ch3utbZj038/" target="_blank"><b>Watch Video Highlight</b></a></li>
+                <li><a href="https://www.instagram.com/reel/Ch3utbZj038/" target="_blank"><b>Watch Video
+                      Highlight</b></a></li>
               </ul>
             </div>
 
@@ -533,19 +868,11 @@
         </div>
 
         <div class="row">
-
-
-
-
-
-
-
-
-
-<div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-            <a href="Web_pages/MuksRobotics.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <a href="Web_pages/MuksRobotics.html" class="project-card d-block text-decoration-none"
+              style="color: inherit;">
               <div class="project-img-wrapper">
-                <img src="Images_and_Videos/MuksRobotics/home_muks.jpg" alt="MuksRobotics">
+                <img src="Images_and_Videos/MuksRobotics/home_muks.webp" alt="MuksRobotics" width="800" height="600" loading="lazy">
                 <div class="project-overlay">
                   <span class="view-btn">View Details</span>
                 </div>
@@ -557,9 +884,10 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="Web_pages/Autonomous_Navigation.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+            <a href="Web_pages/Autonomous_Navigation.html" class="project-card d-block text-decoration-none"
+              style="color: inherit;">
               <div class="project-img-wrapper">
-                <img src="Images_and_Videos/Autonomous_Navigation/Autonomous_Navigation_home.png" alt="Nav2">
+                <img src="Images_and_Videos/Autonomous_Navigation/Autonomous_Navigation_home.webp" alt="Nav2" width="800" height="600" loading="lazy">
                 <div class="project-overlay">
                   <span class="view-btn">View Details</span>
                 </div>
@@ -571,9 +899,10 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="Web_pages/reinforcement_learning.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+            <a href="Web_pages/reinforcement_learning.html" class="project-card d-block text-decoration-none"
+              style="color: inherit;">
               <div class="project-img-wrapper">
-                <img src="Images_and_Videos/RL/reinforcement_learning.png" alt="ROS2 App">
+                <img src="Images_and_Videos/RL/reinforcement_learning.webp" alt="ROS2 App" width="800" height="600" loading="lazy">
                 <div class="project-overlay">
                   <span class="view-btn">View Details</span>
                 </div>
@@ -587,9 +916,11 @@
 
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="Web_pages/ROS_2_Debugging_&_Monitoring_Application.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+            <a href="Web_pages/ROS_2_Debugging_&_Monitoring_Application.html"
+              class="project-card d-block text-decoration-none" style="color: inherit;">
               <div class="project-img-wrapper">
-                <img src="Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Performance_power.png" alt="ROS2 App">
+                <img src="Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Performance_power.webp"
+                  alt="ROS2 App" width="800" height="600" loading="lazy">
                 <div class="project-overlay">
                   <span class="view-btn">View Details</span>
                 </div>
@@ -602,9 +933,10 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-            <a href="Web_pages/AI_Assistance_Annotation_App.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+            <a href="Web_pages/AI_Assistance_Annotation_App.html" class="project-card d-block text-decoration-none"
+              style="color: inherit;">
               <div class="project-img-wrapper">
-                <img src="Images_and_Videos/AI_Assistance_Annotation_App/home.png" alt="Annotation App">
+                <img src="Images_and_Videos/AI_Assistance_Annotation_App/home.webp" alt="Annotation App" width="800" height="600" loading="lazy">
                 <div class="project-overlay">
                   <span class="view-btn">View Details</span>
                 </div>
@@ -619,7 +951,7 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
             <a href="Web_pages/Sarthi.html" class="project-card d-block text-decoration-none" style="color: inherit;">
               <div class="project-img-wrapper">
-                <img src="Images_and_Videos/main/project's/Sarthi.jpg" alt="Sarthi">
+                <img src="Images_and_Videos/main/project's/Sarthi.webp" alt="Sarthi" width="800" height="600" loading="lazy">
                 <div class="project-overlay">
                   <span class="view-btn">View Details</span>
                 </div>
@@ -632,9 +964,10 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="Web_pages/Flappy_Bird.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+            <a href="Web_pages/Flappy_Bird.html" class="project-card d-block text-decoration-none"
+              style="color: inherit;">
               <div class="project-img-wrapper">
-                <img src="Images_and_Videos/main/project's/Flappy Bird.png" alt="Flappy Bird">
+                <img src="Images_and_Videos/main/project's/Flappy Bird.webp" alt="Flappy Bird" width="800" height="600" loading="lazy">
                 <div class="project-overlay">
                   <span class="view-btn">View Details</span>
                 </div>
@@ -647,9 +980,10 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-            <a href="Web_pages/FingerMouse.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+            <a href="Web_pages/FingerMouse.html" class="project-card d-block text-decoration-none"
+              style="color: inherit;">
               <div class="project-img-wrapper">
-                <img src="Images_and_Videos/main/project's//AI_mouse.png" alt="AI Mouse">
+                <img src="Images_and_Videos/main/project's//AI_mouse.webp" alt="AI Mouse" width="800" height="600" loading="lazy">
                 <div class="project-overlay">
                   <span class="view-btn">View Details</span>
                 </div>
@@ -662,9 +996,10 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="Web_pages/Robotic Arm.html" class="project-card d-block text-decoration-none" style="color: inherit;">
+            <a href="Web_pages/Robotic Arm.html" class="project-card d-block text-decoration-none"
+              style="color: inherit;">
               <div class="project-img-wrapper">
-                <img src="Images_and_Videos/main/project's/IMG_20230416_213235.jpg" alt="Robotic Arm">
+                <img src="Images_and_Videos/main/project's/IMG_20230416_213235.webp" alt="Robotic Arm" width="800" height="600" loading="lazy">
                 <div class="project-overlay">
                   <span class="view-btn">View Details</span>
                 </div>
@@ -679,7 +1014,7 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
             <a href="Web_pages/Piyano.html" class="project-card d-block text-decoration-none" style="color: inherit;">
               <div class="project-img-wrapper">
-                <img src="Images_and_Videos/main/project's/Screenshot (4).png" alt="Piano Automation">
+                <img src="Images_and_Videos/main/project's/Screenshot (4).webp" alt="Piano Automation" width="800" height="600" loading="lazy">
                 <div class="project-overlay">
                   <span class="view-btn">View Details</span>
                 </div>
@@ -690,15 +1025,6 @@
               </div>
             </a>
           </div>
-
-
-
-
-
-
-
-
-
 
         </div>
       </div>
@@ -711,7 +1037,7 @@
           <p>Let's connect and build something amazing together.</p>
         </div>
         <div class="row" data-aos="fade-in">
-          
+
           <div class="col-lg-4 d-flex align-items-stretch mb-4 mb-lg-0">
             <div class="info-box">
               <i class="bi bi-geo-alt"></i>
@@ -745,7 +1071,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
 
   <script>
-    (function() {
+    (function () {
       "use strict";
 
       // 1. Initialize Animation on Scroll (AOS)
@@ -782,27 +1108,23 @@
       // 3. Mobile Nav Toggle
       const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
       if (mobileNavToggle) {
-        mobileNavToggle.addEventListener('click', function(e) {
+        mobileNavToggle.addEventListener('click', function (e) {
           document.body.classList.toggle('mobile-nav-active');
           this.classList.toggle('bi-list');
           this.classList.toggle('bi-x');
         });
       }
 
-      /* FIX: Auto-close Sidebar on click outside */
-      document.addEventListener('click', function(e) {
-          const container = document.querySelector('#header');
-          const toggleBtn = document.querySelector('.mobile-nav-toggle');
-          
-          // Only if menu is open
-          if (document.body.classList.contains('mobile-nav-active')) {
-             // If click is NOT inside header AND NOT on the toggle button
-             if (!container.contains(e.target) && !toggleBtn.contains(e.target)) {
-                 document.body.classList.remove('mobile-nav-active');
-                 toggleBtn.classList.remove('bi-x');
-                 toggleBtn.classList.add('bi-list');
-             }
+      document.addEventListener('click', function (e) {
+        const container = document.querySelector('#header');
+        const toggleBtn = document.querySelector('.mobile-nav-toggle');
+        if (document.body.classList.contains('mobile-nav-active')) {
+          if (!container.contains(e.target) && !toggleBtn.contains(e.target)) {
+            document.body.classList.remove('mobile-nav-active');
+            toggleBtn.classList.remove('bi-x');
+            toggleBtn.classList.add('bi-list');
           }
+        }
       });
 
       // 4. Typing Effect
@@ -819,32 +1141,28 @@
         });
       }
 
-      /* * 5. IMPROVED BACKGROUND ANIMATION (Dynamic Constellation)
-       * FIXED: Now strictly uses window.innerWidth/Height to handle Zoom/Resize.
-       */
+      /* * 5. OPTIMIZED HERO ANIMATION * */
       const canvas = document.getElementById("hero-canvas");
       const ctx = canvas.getContext("2d");
-      
+      const heroSection = document.getElementById('hero'); // Target to observe
+
       let width, height;
       let particles = [];
-      
-      // Configuration
-      const particleCount = 90; 
-      const connectionDistance = 160; 
-      const mouseDistance = 180; 
-      
+      let animationId = null; // Store requestAnimationFrame ID
+
+      const particleCount = 90;
+      const connectionDistance = 160;
+      const mouseDistance = 180;
+
       function resize() {
-        // STRICT FIX: Always use window dimensions to cover entire viewport
         width = window.innerWidth;
         height = window.innerHeight;
-        
         canvas.width = width;
         canvas.height = height;
       }
-      
       window.addEventListener("resize", resize);
-      resize(); // Call immediately
-      
+      resize();
+
       const mouse = { x: null, y: null };
       window.addEventListener("mousemove", (e) => {
         mouse.x = e.x;
@@ -859,39 +1177,32 @@
         constructor() {
           this.x = Math.random() * width;
           this.y = Math.random() * height;
-          this.vx = (Math.random() - 0.5) * 2.5; 
-          this.vy = (Math.random() - 0.5) * 2.5; 
+          this.vx = (Math.random() - 0.5) * 2.5;
+          this.vy = (Math.random() - 0.5) * 2.5;
           this.size = Math.random() * 2 + 1.5;
-          this.color = `rgba(0, 225, 255, ${Math.random() * 0.5 + 0.3})`; 
+          this.color = `rgba(0, 225, 255, ${Math.random() * 0.5 + 0.3})`;
         }
-        
+
         update() {
           this.x += this.vx;
           this.y += this.vy;
-          
-          // Bounce off walls (Use dynamic width/height)
           if (this.x < 0 || this.x > width) this.vx = -this.vx;
           if (this.y < 0 || this.y > height) this.vy = -this.vy;
-          
-          // Mouse Interaction
+
           if (mouse.x != null) {
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx*dx + dy*dy);
-            
+            let distance = Math.sqrt(dx * dx + dy * dy);
             if (distance < mouseDistance) {
-               const forceDirectionX = dx / distance;
-               const forceDirectionY = dy / distance;
-               const force = (mouseDistance - distance) / mouseDistance;
-               const directionX = forceDirectionX * force * 3;
-               const directionY = forceDirectionY * force * 3;
-               
-               this.x -= directionX;
-               this.y -= directionY;
+              const forceDirectionX = dx / distance;
+              const forceDirectionY = dy / distance;
+              const force = (mouseDistance - distance) / mouseDistance;
+              this.x -= forceDirectionX * force * 3;
+              this.y -= forceDirectionY * force * 3;
             }
           }
         }
-        
+
         draw() {
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -899,33 +1210,28 @@
           ctx.fill();
         }
       }
-      
-      // Init particles
+
       function initParticles() {
         particles = [];
-        for(let i=0; i<particleCount; i++) {
-            particles.push(new Particle());
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
         }
       }
       initParticles();
-      
+
       function animate() {
         ctx.clearRect(0, 0, width, height);
-        
-        for(let i=0; i<particles.length; i++) {
+        for (let i = 0; i < particles.length; i++) {
           particles[i].update();
           particles[i].draw();
-          
-          // Draw connections
-          for(let j=i; j<particles.length; j++) {
+          for (let j = i; j < particles.length; j++) {
             let dx = particles[i].x - particles[j].x;
             let dy = particles[i].y - particles[j].y;
-            let distance = Math.sqrt(dx*dx + dy*dy);
-            
+            let distance = Math.sqrt(dx * dx + dy * dy);
             if (distance < connectionDistance) {
               ctx.beginPath();
-              let opacity = 1 - (distance/connectionDistance);
-              ctx.strokeStyle = `rgba(99, 102, 241, ${opacity * 0.6})`; 
+              let opacity = 1 - (distance / connectionDistance);
+              ctx.strokeStyle = `rgba(99, 102, 241, ${opacity * 0.6})`;
               ctx.lineWidth = 1;
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
@@ -933,12 +1239,34 @@
             }
           }
         }
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
       }
-      animate();
+
+      /* CPU SAVER: Only animate when hero section is visible */
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Start animation if not running
+            if (!animationId) {
+              animate();
+            }
+          } else {
+            // Stop animation to save battery
+            if (animationId) {
+              cancelAnimationFrame(animationId);
+              animationId = null;
+            }
+          }
+        });
+      }, { threshold: 0.1 }); // Trigger when 10% visible
+      
+      observer.observe(heroSection);
 
     })();
   </script>
 
+  <script data-goatcounter="https://chetanparihar.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 </body>
+
 </html>
