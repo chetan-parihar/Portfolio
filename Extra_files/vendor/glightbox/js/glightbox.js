@@ -1803,7 +1803,7 @@
         provider = 'local';
         var html = '<video id="' + videoID + '" ';
         html += "style=\"background:#000; max-width: ".concat(data.width, ";\" ");
-        html += 'preload="metadata" ';
+        html += 'preload="auto" ';
         html += 'x-webkit-airplay="allow" ';
         html += 'playsinline ';
         html += 'controls ';
