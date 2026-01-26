@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Semantic SLAM and Navigation - Chetan Parihar</title>
+  <meta content="Autonomous navigation projects using ROS 2, Nav2, SLAM, and LiDAR technologies." name="description">
+  <meta content="ROS2, Nav2, SLAM, LiDAR, Robotics, Autonomous Navigation" name="keywords">
+
+  <link href="../Images_and_Videos/main/C_Symbol.webp" rel="icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link href="../Extra_files/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../Extra_files/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../Extra_files/css/theme.css" rel="stylesheet">
+
+
+
+
+
+</head>
+
+<body>
+  <!-- <audio id="myaudio" src="../Audio/BG Music2.mp3" autoplay loop hidden></audio> -->
+
+  <!-- <script>
+    var audio = document.getElementById("myaudio");
+    if (audio) audio.volume = 0.5;
+  </script> -->
+
+  <i class="bi bi-list mobile-nav-toggle-fix d-xl-none"></i>
+
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="../Images_and_Videos/main/Profile.webp" alt="Chetan Parihar" class="img-fluid rounded-circle"
+          style="margin: 15px auto; display: block; width: 120px; border: 2px solid var(--accent); box-shadow: 0 0 20px rgba(0, 225, 255, 0.3);">
+
+        <h1 class="text-light text-center"><a href="../index.html">Chetan Parihar</a></h1>
+
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i
+              class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/chetan-parihar" class="github"><i class="bx bxl-github"></i></a>
+          <a href="https://www.instagram.com/ichetanparihar/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="../index.html#hero" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a>
+          </li>
+          <br>
+          <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a>
+          </li>
+          <br>
+          <li><a href="../index.html#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i>
+              <span>Skills</span></a></li>
+          <br>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i>
+              <span>Experience</span></a></li>
+          <br>
+          <li><a href="../index.html#projects" class="nav-link active"><i class="bx bx-server"></i>
+              <span>Projects</span></a></li>
+          <br>
+          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i>
+              <span>Contact</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Project Details</h2>
+          <ol>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li>Semantic Slam and Navigation</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="sticky-sidebar">
+              <div class="portfolio-details-slider swiper mb-4">
+                <div class="swiper-wrapper align-items-center">
+                  <div class="slideshow swiper-slide"><img
+                      src="../Images_and_Videos/Semantic_slam_and_navigation/images/semantic_image2.webp" alt=""></div>
+                  <div class="slideshow swiper-slide"><img
+                      src="../Images_and_Videos/Semantic_slam_and_navigation/images/semantic_image3.webp" alt=""></div>
+                  <div class="slideshow swiper-slide"><img
+                      src="../Images_and_Videos/Semantic_slam_and_navigation/images/semantic_image5.webp" alt=""></div>
+                  <div class="slideshow swiper-slide"><img
+                      src="../Images_and_Videos/Semantic_slam_and_navigation/images/semantic_image6.webp" alt=""></div>
+                  <div class="slideshow swiper-slide"><img
+                      src="../Images_and_Videos/Semantic_slam_and_navigation/images/semantic_image9.webp" alt=""></div>
+                  <div class="slideshow swiper-slide"><img
+                      src="../Images_and_Videos/Semantic_slam_and_navigation/images/semantic_image10.webp" alt=""></div>
+                  <div class="slideshow swiper-slide"><img
+                      src="../Images_and_Videos/Semantic_slam_and_navigation/images/semantic_image1.webp" alt=""
+                      class="border"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+
+
+
+              <div class="portfolio-info">
+                <h3>Project Overview</h3>
+                <p>
+                  The core objective of this project is to extend the capabilities of <strong>ROS2 Nav2</strong> by
+                  integrating
+                  Large Language Models (LLMs) to enable <strong>Semantic Navigation</strong>. By allowing the robot to
+                  perceive and understand objects in its surroundings, it can move beyond coordinate-based goals to
+                  context-aware task execution.
+                </p>
+
+
+
+                <p>
+                  <strong>Vision Strategy & Spatial Database:</strong> I implemented a hybrid approach to perception. I
+                  integrated a
+                  <strong>small VLM</strong> to extract high-fidelity object descriptions , which was best but slow then
+                  what i want then
+                  <strong>fine-tuned YOLOv8 model</strong> for real-time speed. Crucially, all detected object
+                  data—including
+                  semantic labels and precise spatial coordinates—are stored in a
+                  <strong>structured JSON database</strong>.
+                  This creates a "persistent memory" that the robot can query to locate objects even when they are no
+                  longer in the immediate camera frame.
+                </p>
+
+                <p> <strong>The "Robot Brain":</strong> I benchmarked several models for high-level reasoning, including
+                  <em>DeepSeek-R1:8B</em>, <em>Qwen2-VL:8B</em>, and <em>Mistral-3:3B</em>. My testing concluded that
+                  <strong>GPT-OSS:20B</strong> <strong>no doubt</strong> delivered the most reliable reasoning for
+                  complex task planning. While performance is highly dependent on context and prompt engineering, this
+                  model proved superior in bridging the gap between natural language prompts and <strong>Nav2 low-level
+                    execuspecializedtion</strong>.
+                </p>
+
+                <p>
+                  <strong>Spatial Awareness & Fusion:</strong> Object locations are precisely localized using
+                  <strong>RGB-D depth camera data</strong>. The system architecture is designed for scalability,
+                  supporting the <strong>synchronization of 2D LiDAR with 3D depth cameras</strong> to create
+                  high-fidelity, multi-modal semantic maps.
+                </p>
+
+                <p>
+                  <strong>Human-Robot Interaction (HRI):</strong> To provide a seamless user experience, I integrated
+                  <strong>Nvidia Parakeet-TDT (0.6b-v2)</strong> for STT and <strong>Edge-TTS</strong> for speech
+                  synthesis.
+                  The robot’s internal reasoning is visualized through a custom <strong>PyQt-based animation
+                    interface</strong> that reflects the "thought process" in real-time.
+                </p>
+
+                <div class="alert alert-info">
+                  <strong>Current Limitations & Research:</strong>
+                  The current system handles dynamic object re-arrangement within the robot's field of view.
+                  However, if an object moves while the robot is not observing it, the algorithm currently
+                  identifies the reappearance as a new entity.
+                </div>
+
+                <ul>
+                  <li><strong>AI Stack:</strong> GPT-OSS (Brain), YOLOv8 (Vision),VLM, Ollama</li>
+                  <li><strong>Speech & UI:</strong> Nvidia Parakeet-TDT, Edge-TTS, PyQt5 Animations</li>
+                  <li><strong>Robotics:</strong> ROS2 Humble, Nav2, SLAM Toolbox</li>
+                  <li><strong>Sensors:</strong> 2D LiDAR & RGB-D Camera (Depth-Spatial Mapping)</li>
+                  <li><strong>Key Logic:</strong> LLM-driven task sequencing with Nav2 path planning</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <h3 class="mb-4 pb-2 border-bottom">Demo Videos</h3>
+
+
+            <div class="project-card mb-5">
+              <h5>Real-Time Semantic Mapping via YOLOv8</h5>
+              <div class="mb-3">
+                <span class="badge bg-secondary badge-tech">YOLOv8</span>
+                <span class="badge bg-secondary badge-tech">SLAM Toolbox</span>
+                <span class="badge bg-secondary badge-tech">Nav2</span>
+              </div>
+              <p>
+                This phase focused on achieving low-latency perception. By integrating <strong>fine-tuned
+                  YOLOv8</strong> with the <strong>SLAM Toolbox</strong>, I developed a pipeline that projects 2D object
+                detections into a 3D spatial occupancy grid. This allows the robot to "see" and remember the physical
+                location of objects in real-time without compromising navigation speed.
+              </p>
+              <div class="d-flex justify-content-center">
+                <video class="rounded shadow-sm portfolio-video" width="100%" height="auto" controls playsinline
+                  preload="metadata"
+                  poster="../Images_and_Videos/Semantic_slam_and_navigation/images/Semantic_viode4.webp">
+                  <source src="../Images_and_Videos/Semantic_slam_and_navigation/videos/Semantic_viode4.webm"
+                    type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+            <div class="project-card mb-5">
+              <h5>Advanced VLM Integration & Semantic Context</h5>
+              <div class="mb-3">
+                <span class="badge bg-secondary badge-tech">VLM</span>
+                <span class="badge bg-secondary badge-tech">Spatial Mapping</span>
+                <span class="badge bg-secondary badge-tech">JSON Database</span>
+              </div>
+              <p>
+                Moving beyond simple bounding boxes, I utilized a <strong>small VLM</strong> to extract
+                rich, high-fidelity descriptions of the environment and bounding box on object. This integration allows
+                the robot to understand
+                visual context and identify unique object attributes—such as color, texture, and state—creating a
+                "meaning-aware" semantic map rather than just a geometric occupancy grid.
+              </p>
+
+
+
+              <p>
+                To ensure the system remained performant for active movement, I finalized the pipeline by integrating
+                <strong>YOLOv8</strong>. This allowed the robot to use high-speed tracking and real-time navigation
+                updates.
+              </p>
+              <div class="d-flex justify-content-center">
+                <video class="rounded shadow-sm portfolio-video" width="100%" height="auto" controls playsinline
+                  preload="metadata"
+                  poster="../Images_and_Videos/Semantic_slam_and_navigation/images/Semantic_viode3.webp">
+                  <source src="../Images_and_Videos/Semantic_slam_and_navigation/videos/Semantic_viode3.webm"
+                    type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="project-card mb-5">
+              <h5>Sequential Task Planning & Goal Sequencing</h5>
+              <div class="mb-3">
+                <span class="badge bg-secondary badge-tech">GPT-OSS:20b</span>
+                <span class="badge bg-secondary badge-tech">Qwen2-VL</span>
+                <span class="badge bg-secondary badge-tech">Ollama</span>
+              </div>
+              <p>
+                Demonstrating the "Robot Brain" in action: The robot receives complex, natural language
+                commands like <em>"Go to the Android toy, go to Mario and the Asus box."</em> Using
+                <strong>GPT-OSS:20b</strong>, the system deconstructs these sentences into logical navigation goals.
+              </p>
+              <div class="d-flex justify-content-center">
+                <video class="rounded shadow-sm portfolio-video" width="100%" height="auto" controls playsinline
+                  preload="metadata"
+                  poster="../Images_and_Videos/Semantic_slam_and_navigation/images/Semantic_viode2.webp">
+                  <source src="../Images_and_Videos/Semantic_slam_and_navigation/videos/Semantic_viode2.webm"
+                    type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+
+
+            <div class="project-card mb-5">
+              <h5>Contextual Reasoning</h5>
+              <div class="mb-3">
+                <span class="badge bg-primary badge-tech">Jan-2025</span>
+                <span class="badge bg-secondary badge-tech">Zero-Shot Classification</span>
+                <span class="badge bg-secondary badge-tech">Contextual Memory</span>
+                <span class="badge bg-secondary badge-tech">Autonomous Navigation</span>
+              </div>
+              <p>
+                This final demo showcases the integration of <strong>Long-Term Contextual Memory</strong> with spatial
+                reasoning. When the user asks to identify a "wild animal," the robot performs zero-shot classification
+                to identify a toy lion.
+              </p>
+
+
+
+              <p>
+                Crucially, when the user follows up with <em>"Which object is close to <strong>it</strong>?"</em>, the
+                robot maintains the conversation context—understanding that "it" refers to the lion identified
+                previously. It then queries its <strong>JSON spatial database</strong> to calculate the nearest neighbor
+                (the yellow traffic cone) and autonomously plans a path to that coordinate via <strong>Nav2</strong>,
+                even without the user repeating the object's name.
+              </p>
+              <div class="d-flex justify-content-center">
+                <video class="rounded shadow-sm portfolio-video" width="100%" height="auto" controls playsinline
+                  preload="metadata"
+                  poster="../Images_and_Videos/Semantic_slam_and_navigation/images/Semantic_viode1.webp">
+                  <source src="../Images_and_Videos/Semantic_slam_and_navigation/videos/Semantic_viode1.webm"
+                    type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+  </main>
+
+  <a href="../Web_pages/Autonomous_Navigation.html"
+    class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-right-short"></i>
+  </a>
+
+  <script src="../Extra_files/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../Extra_files/vendor/aos/aos.js"></script>
+  <script src="../Extra_files/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../Extra_files/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../Extra_files/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../Extra_files/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../Extra_files/vendor/typed.js/typed.umd.js"></script>
+  <script src="../Extra_files/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../Extra_files/vendor/php-email-form/validate.js"></script>
+  <script src="../Extra_files/js/main.js"></script>
+  <script src="../Extra_files/js/layout.js"></script>
+  
+  <script data-goatcounter="https://chetanparihar.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const videos = document.querySelectorAll('.portfolio-video');
+
+      videos.forEach(video => {
+        video.addEventListener('play', function () {
+          // Pause all other videos when one starts playing
+          videos.forEach(otherVideo => {
+            if (otherVideo !== video) {
+              otherVideo.pause();
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
