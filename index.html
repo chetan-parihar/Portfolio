@@ -69,7 +69,12 @@
       pointer-events: none;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: 'Exo 2', sans-serif;
       color: #fff;
       font-weight: 700;
@@ -237,6 +242,7 @@
       #header {
         left: -300px;
       }
+
       #main {
         margin-left: 0;
       }
@@ -522,13 +528,13 @@
     }
 
     /* --- FIXED SKILLS SECTION --- */
-    .skills-content ul { 
-      list-style: none; 
-      padding: 0; 
+    .skills-content ul {
+      list-style: none;
+      padding: 0;
     }
 
-    .skills-content ul li { 
-      display: flex; 
+    .skills-content ul li {
+      display: flex;
       align-items: flex-start;
       margin-bottom: 12px;
       line-height: 1.5;
@@ -536,10 +542,10 @@
     }
 
     /* The Arrow Icon */
-    .skills-content ul li i { 
-      font-size: 18px; 
-      margin-right: 8px; 
-      color: var(--accent); 
+    .skills-content ul li i {
+      font-size: 18px;
+      margin-right: 8px;
+      color: var(--accent);
       flex-shrink: 0;
       margin-top: 3px;
     }
@@ -570,7 +576,7 @@
     .contact .info-box:hover {
       transform: translateY(-10px);
       border-color: var(--accent);
-      box-shadow: 0 10px 40px -10px rgba(0, 225, 255, 0.3);
+      box-shadow: 0 10px 40px -10px rgba(0, 225, 255, 0.089);
     }
 
     .contact .info-box i {
@@ -635,7 +641,233 @@
     }
 
     @keyframes blinker {
-      50% { opacity: 0; }
+      50% {
+        opacity: 0;
+      }
+    }
+
+
+    /* Add a subtle indicator that the card is clickable */
+    .project-card::after {
+      content: "Click for Details";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--accent);
+      color: #020617;
+      font-size: 0.6rem;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 4px;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Make the text-accent color match your theme */
+    .text-accent {
+      color: var(--accent);
+      transition: 0.3s;
+    }
+
+    .project-card:hover .text-accent {
+      text-shadow: 0 0 10px var(--accent);
+    }
+
+    /* Specifically targeting the project description for clarity */
+    .project-info p {
+      color: #00e1ff;
+      /* Your specific accent color */
+      line-height: 1.4;
+      letter-spacing: 0.3px;
+    }
+
+    /* On mobile, make the font slightly larger for easier reading */
+    @media (max-width: 768px) {
+      .project-info h4 {
+        font-size: 1.3rem;
+        /* Make titles bigger for thumbs */
+      }
+
+      .project-info p {
+        font-size: 0.95rem;
+        /* Increase readability on phones */
+      }
+    }
+
+
+    /* The 'Watch Demo' hint on the image */
+    .video-hint {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(2, 6, 23, 0.8);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* The 'Click Here' button style */
+    .cta-button {
+      background: linear-gradient(45deg, var(--accent-secondary), var(--accent));
+      color: #020617;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      transition: 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .project-card:hover .cta-button {
+      box-shadow: 0 0 15px var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* On mobile, make the CTA always pulse slightly to attract taps */
+    @media (max-width: 768px) {
+      .cta-button {
+        animation: pulse-button 2s infinite;
+      }
+    }
+
+    @keyframes pulse-button {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0, 183, 255, 0.932);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(0, 225, 255, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 225, 255, 0);
+      }
+    }
+
+    /* --- 1. Subduing the Hover Intensity --- */
+    .project-card {
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      background: rgba(30, 41, 59, 0.4);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      /* Reduced brightness: using 0.3 alpha instead of solid color */
+      border-color: rgba(0, 225, 255, 0.3) !important;
+      /* Soft, deep shadow instead of a bright outer glow */
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(0, 225, 255, 0.1);
+    }
+
+    /* --- 2. Improved Video Badge (Glass-morphism) --- */
+    .video-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(0, 225, 255, 0.2);
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse-animation 2s infinite;
+    }
+
+    @keyframes pulse-animation {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 225, 255, 0.7);
+      }
+
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(0, 225, 255, 0);
+      }
+
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 225, 255, 0);
+      }
+    }
+
+    /* --- 3. Clean Tech Tags --- */
+    .tag-pill {
+      background: rgba(0, 225, 255, 0.05) !important;
+      border: 1px solid rgba(0, 225, 255, 0) !important;
+      color: var(--accent) !important;
+      font-size: 0.6rem !important;
+    }
+
+    .tech-label {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.55rem;
+      letter-spacing: 1px;
+    }
+
+    /* --- 4. Mobile Optimized CTA Button --- */
+    .cta-button {
+      background: rgba(0, 225, 255, 0.1);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+
+    .project-card:hover .cta-button {
+      background: var(--accent);
+      color: #020617;
+    }
+
+    .project-info {
+      position: relative;
+      /* This allows the date to be positioned relative to this box */
+    }
+
+    .project-info .date {
+      position: absolute;
+      top: 15px;
+      /* Adjust this to move it up or down */
+      right: 20px;
+      /* Adjust this to move it left or right */
+      margin: 0;
+      font-size: 0.75rem;
+      opacity: 0.6;
+      font-style: italic;
     }
   </style>
 </head>
@@ -648,7 +880,8 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="Images_and_Videos/main/Profile.webp" alt="Chetan Parihar" class="img-fluid rounded-circle" width="120" height="120" fetchpriority="high">
+        <img src="Images_and_Videos/main/Profile.webp" alt="Chetan Parihar" class="img-fluid rounded-circle" width="120"
+          height="120" fetchpriority="high">
         <h1 class="text-light"><a href="index.html">Chetan Parihar</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://www.linkedin.com/in/chetan-parihar-9188581b7" class="linkedin"><i
@@ -661,17 +894,20 @@
       <nav id="navbar" class="nav-menu navbar">
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Projects</span></a></li>
+
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Skills</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Experience</span></a>
           </li>
-          <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Projects</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
           <li><span class="text-muted small ps-3">Last update: Jan 2026</span></li>
         </ul>
       </nav>
     </div>
   </header>
+
+
 
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <canvas id="hero-canvas"></canvas>
@@ -682,11 +918,286 @@
           data-typed-items="ROS 2, PyTorch, Computer Vision, Reinforcement Learning, LLM, YOLO, Python (OOP), C++, Unity"></span>
       </p>
 
-      <a href="#projects" class="btn-hero scrollto">View Projects <i class="bi bi-arrow-down-short"></i></a>
+      <!-- <a href="#projects" class="btn-hero scrollto">View Projects <i class="bi bi-arrow-down-short"></i></a> -->
     </div>
   </section>
 
   <main id="main">
+    <section id="projects" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Hands-on implementation of robust systems for the physical world.</p>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <a href="Web_pages/MuksRobotics.html#scrollhere" class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/MuksRobotics/home_muks.webp" alt="MuksRobotics" loading="lazy">
+              </div>
+              <div class="project-info">
+                <div class="date">Aug 2024 - Dec 2025</div>
+                <h4><span class="blink">►</span> MuksRobotics Work</h4>
+                <p class="small mb-2 fw-medium" style="color: var(--accent);">Autonomous navigation for AMR, Humanoid,
+                  and Quadruped platforms.</p>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">ROS 2</span>
+                  <span class="badge tag-pill">SLAM</span>
+                  <span class="badge tag-pill">Nav 2</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <a href="Web_pages/Semantic_slam_and_navigation.html#scrollhere" class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/Semantic_slam_and_navigation/images/main_image.png" alt="Semantic SLAM"
+                  loading="lazy">
+              </div>
+              <div class="project-info">
+                <div class="date">Jan 2026</div>
+                <h4><span class="blink">►</span> Semantic SLAM</h4>
+                <p class="small mb-2 fw-medium" style="color: var(--accent);">Enabling semantic navigation by perception with LLM reasoning for context-aware task sequencing.
+                  </p>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">Ollama</span>
+                  <span class="badge tag-pill">ROS 2</span>
+                  <span class="badge tag-pill">VLM</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <a href="Web_pages/Autonomous_Navigation.html#scrollhere" class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/Autonomous_Navigation/Autonomous_Navigation_home.webp"
+                  alt="Autonomous Navigation" loading="lazy">
+              </div>
+              <div class="project-info">
+                <h4><span class="blink">►</span> Autonomous Navigation</h4>
+                <p class="small mb-2 fw-medium" style="color: var(--accent);">Multi-sensor navigation using 2D/3D LiDAR
+                  and RGB-D cameras.</p>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">Nav2</span>
+                  <span class="badge tag-pill">RTAB-Map</span>
+                  <span class="badge tag-pill">Jetson AGX</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <a href="Web_pages/reinforcement_learning.html#scrollhere" class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/RL/reinforcement_learning.webp" alt="RL" loading="lazy">
+              </div>
+              <div class="project-info">
+                <div class="date">Dec 2025</div>
+                <h4><span class="blink">►</span> Reinforcement Learning</h4>
+                <p class="small mb-2 fw-medium" style="color: var(--accent);">Training a quadruped robot for stable locomotion using Reinforcement Learning.</p>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">PyTorch</span>
+                  <span class="badge tag-pill">Isaac Sim</span>
+                  <span class="badge tag-pill">Isaac Lab</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <a href="Web_pages/ROS_2_Debugging_&_Monitoring_Application.html"
+              class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Performance_power.webp"
+                  alt="ROS2 App" loading="lazy">
+              </div>
+              <div class="project-info">
+                <div class="date">Dec 2025</div>
+                <h4><span class="blink">►</span> ROS 2 Debugging App</h4>
+                <p class="small mb-2 fw-medium" style="color: var(--accent);">Real-time monitoring and performance
+                  tracking for ROS 2 nodes.</p>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">Python</span>
+                  <span class="badge tag-pill">ROS 2</span>
+                  <span class="badge tag-pill">GUI</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <a href="Web_pages/AI_Assistance_Annotation_App.html" class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/AI_Assistance_Annotation_App/home.webp" alt="Annotation App" loading="lazy">
+              </div>
+              <div class="project-info">
+                <div class="date">June 2025</div>
+                <h4><span class="blink">►</span> AI Annotation App</h4>
+                <p class="small mb-2 fw-medium" style="color: var(--accent);">Semi-automated labeling workflow reducing
+                  manual effort by 50%.</p>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">YOLOv8</span>
+                  <span class="badge tag-pill">OpenCV</span>
+                  <span class="badge tag-pill">Active Learning</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <a href="Web_pages/Sarthi.html" class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/main/project's/Sarthi.webp" alt="Sarthi" loading="lazy">
+              </div>
+              <div class="project-info">
+                <div class="date">Jan 2024</div>
+                <h4><span class="blink">►</span> Virtual Assistant</h4>
+                <p class="small mb-2 fw-medium" style="color: var(--accent);">Voice-controlled AI assistant for desktop
+                  automation.</p>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">Python</span>
+                  <span class="badge tag-pill">SpeechRec</span>
+                  <span class="badge tag-pill">NLP</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <a href="Web_pages/Flappy_Bird.html" class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/main/project's/Flappy Bird.webp" alt="Flappy Bird" loading="lazy">
+              </div>
+              <div class="project-info">
+                <div class="date">Mar 2024</div>
+                <h4><span class="blink">►</span> AI Flappy Bird</h4>
+                <p class="small mb-2 fw-medium" style="color: var(--accent);">Automate the Flappy Bird game.</p>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">NEAT</span>
+                  <span class="badge tag-pill">Python</span>
+                  <span class="badge tag-pill">AI Control</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <a href="Web_pages/FingerMouse.html" class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/main/project's/AI_mouse.webp" alt="AI Mouse" loading="lazy">
+              </div>
+              <div class="project-info">
+                <div class="date">Mar 2022</div>
+                <h4><span class="blink">►</span> AI Mouse Pointer</h4>
+                <p class="small mb-2 fw-medium" style="color: var(--accent);">Gesture-based human-computer interaction
+                  via computer vision.</p>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">MediaPipe</span>
+                  <span class="badge tag-pill">OpenCV</span>
+                  <span class="badge tag-pill">CV</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <a href="Web_pages/Robotic Arm.html" class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/main/project's/IMG_20230416_213235.webp" alt="Robotic Arm" loading="lazy">
+              </div>
+              <div class="project-info">
+                <div class="date">Apr 2023</div>
+                <h4><span class="blink">►</span> Robotic Arm</h4>
+                <p class="small mb-2 fw-medium" style="color: var(--accent);">Warehouse Robotic Arm With line-following for navigation</p>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">C++</span>
+                  <span class="badge tag-pill">Arduino</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <a href="Web_pages/Piyano.html" class="project-card d-block text-decoration-none">
+              <div class="project-img-wrapper">
+                <img src="Images_and_Videos/main/project's/Screenshot (4).webp" alt="Piano Automation" loading="lazy">
+              </div>
+              <div class="project-info">
+                <div class="date">Dec 2021</div>
+                <h4><span class="blink">►</span> Automate Piano Game</h4>
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                  <span class="badge tag-pill">PyAutoGUI</span>
+                  <span class="badge tag-pill">Python</span>
+                  <span class="badge tag-pill">Automation</span>
+                </div>
+                <div class="cta-button">
+                  <span>VIEW DETAILS & VIDEO</span>
+                  <i class="bi bi-arrow-right-circle-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
 
     <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
@@ -855,196 +1366,7 @@
       </div>
     </section>
 
-    <section id="projects" class="services">
-      <div class="container">
 
-        <div class="section-title">
-          <h2>Projects</h2>
-          <p>Hands-on implementation of robust systems for the physical world.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-            <a href="Web_pages/MuksRobotics.html" class="project-card d-block text-decoration-none"
-              style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/MuksRobotics/home_muks.webp" alt="MuksRobotics" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>MuksRobotics Work</h4>
-              </div>
-            </a>
-          </div>
-
-            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="Web_pages/Semantic_slam_and_navigation.html" class="project-card d-block text-decoration-none"
-              style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/Semantic_slam_and_navigation/images/main_image.png" alt="Nav2" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>Semantic SLAM and Navigation</h4>
-                                <div class="date">Jan 2026</div>
-
-              </div>
-            </a>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="Web_pages/Autonomous_Navigation.html" class="project-card d-block text-decoration-none"
-              style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/Autonomous_Navigation/Autonomous_Navigation_home.webp" alt="Nav2" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>Autonomous Navigation</h4>
-              </div>
-            </a>
-          </div>
-
-
-
-          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="Web_pages/reinforcement_learning.html" class="project-card d-block text-decoration-none"
-              style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/RL/reinforcement_learning.webp" alt="ROS2 App" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>Reinforcement Learning</h4>
-                <div class="date">Dec 2025</div>
-              </div>
-            </a>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="Web_pages/ROS_2_Debugging_&_Monitoring_Application.html"
-              class="project-card d-block text-decoration-none" style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/ROS_2_Debugging_&_Monitoring_Application/Performance_power.webp"
-                  alt="ROS2 App" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>ROS 2 Debugging App</h4>
-                <div class="date">Dec 2025</div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-            <a href="Web_pages/AI_Assistance_Annotation_App.html" class="project-card d-block text-decoration-none"
-              style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/AI_Assistance_Annotation_App/home.webp" alt="Annotation App" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>AI Annotation App</h4>
-                <div class="date">June 2025</div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="Web_pages/Sarthi.html" class="project-card d-block text-decoration-none" style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/main/project's/Sarthi.webp" alt="Sarthi" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>Virtual Assistant (Sarthi)</h4>
-                <div class="date">Jan 2024</div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="Web_pages/Flappy_Bird.html" class="project-card d-block text-decoration-none"
-              style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/main/project's/Flappy Bird.webp" alt="Flappy Bird" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>AI Flappy Bird</h4>
-                <div class="date">Mar 2024</div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-            <a href="Web_pages/FingerMouse.html" class="project-card d-block text-decoration-none"
-              style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/main/project's//AI_mouse.webp" alt="AI Mouse" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>AI Mouse Pointer</h4>
-                <div class="date">Mar 2022</div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="Web_pages/Robotic Arm.html" class="project-card d-block text-decoration-none"
-              style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/main/project's/IMG_20230416_213235.webp" alt="Robotic Arm" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>Robotic Arm</h4>
-                <div class="date">Apr 2023</div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="Web_pages/Piyano.html" class="project-card d-block text-decoration-none" style="color: inherit;">
-              <div class="project-img-wrapper">
-                <img src="Images_and_Videos/main/project's/Screenshot (4).webp" alt="Piano Automation" width="800" height="600" loading="lazy">
-                <div class="project-overlay">
-                  <span class="view-btn">View Details</span>
-                </div>
-              </div>
-              <div class="project-info">
-                <h4><span class="blink">►</span>Automate Piano Game</h4>
-                <div class="date">Dec 2021</div>
-              </div>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
 
     <section id="contact" class="contact section-bg">
       <div class="container">
@@ -1275,7 +1597,7 @@
           }
         });
       }, { threshold: 0.1 }); // Trigger when 10% visible
-      
+
       observer.observe(heroSection);
 
     })();
