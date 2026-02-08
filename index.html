@@ -869,6 +869,18 @@
       opacity: 0.6;
       font-style: italic;
     }
+/* Optimization: Skip rendering of off-screen content */
+#projects, #about, #skills, #resume {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
+}
+
+/* Force GPU acceleration for smooth scrolling */
+.project-card {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
   </style>
 </head>
 
@@ -1488,7 +1500,8 @@
       let particles = [];
       let animationId = null; // Store requestAnimationFrame ID
 
-      const particleCount = 90;
+      // const particleCount = 90;
+      const particleCount = window.innerWidth < 768 ? 40 : 90;
       const connectionDistance = 160;
       const mouseDistance = 180;
 
